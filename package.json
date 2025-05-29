@@ -1,12 +1,45 @@
 {
-  "name": "react-toast-msg",
-  "version": "0.0.1",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "SudhuCodes",
-  "license": "ISC",
-  "description": "Working on it"
+    "name": "react-toast-msg",
+    "version": "0.1.0",
+    "description": "A lightweight, customizable React toast notification library with zero-config and fast setup.",
+    "main": "dist/index.js",
+    "module": "dist/index.es.js",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "rollup -c"
+    },
+    "keywords": [
+        "react",
+        "toast",
+        "notification",
+        "react-toast",
+        "react-toastify",
+        "snackbar",
+        "react-toast-msg",
+        "toast-component"
+    ],
+    "author": "SudhuCodes",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sudhucodes/react-toast-msg.git"
+    },
+    "bugs": {
+        "url": "https://github.com/sudhucodes/react-toast-msg/issues"
+    },
+    "homepage": "https://github.com/sudhucodes/react-toast-msg#readme",
+    "peerDependencies": {
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.27.3",
+        "@babel/preset-env": "^7.27.2",
+        "@babel/preset-react": "^7.27.1",
+        "@rollup/plugin-babel": "^6.0.4",
+        "@rollup/plugin-node-resolve": "^15.0.1",
+        "rollup": "^3.22.0"
+    }
 }
