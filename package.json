@@ -1,6 +1,6 @@
 {
     "name": "react-toast-msg",
-    "version": "0.1.0",
+    "version": "1.0.2",
     "description": "A lightweight, customizable React toast notification library with zero-config and fast setup.",
     "main": "dist/index.js",
     "module": "dist/index.es.js",
@@ -40,6 +40,7 @@
         "@babel/preset-react": "^7.27.1",
         "@rollup/plugin-babel": "^6.0.4",
         "@rollup/plugin-node-resolve": "^15.0.1",
-        "rollup": "^3.22.0"
+        "rollup": "^3.22.0",
+        "rollup-plugin-postcss": "^4.0.2"
     }
 }
