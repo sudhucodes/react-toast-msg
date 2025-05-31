@@ -19,7 +19,7 @@ export default {
     plugins: [
         resolve(),
         postcss({
-            extract: true,
+            inject: true,
             minimize: true,
             sourceMap: true
         }),

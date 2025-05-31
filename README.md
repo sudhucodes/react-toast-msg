@@ -8,6 +8,7 @@ A lightweight, zero-config, customizable React toast notification library — ju
 - Works with both `import` and `require`
 - Easy to style with utility classes
 - Works with React 18+
+- Supports multiple variants (success, error more coming soon)
 
 
 ## Installation
@@ -25,12 +26,17 @@ npm install react-toast-msg
 import { ToastContainer, toast } from 'react-toast-msg';
 
 function App() {
-  return (
-    <>
-      <ToastContainer />
-      <button onClick={() => toast('This is a toast!')}>Show Toast</button>
-    </>
-  );
+    return (
+        <>
+            <ToastContainer />
+            <button onClick={() => toast.success('This is a success toast!')}>
+                Show Success Toast
+            </button>
+            <button onClick={() => toast.error('This is an error toast!')}>
+                Show Error Toast
+            </button>
+        </>
+    );
 }
 ```
 
@@ -38,26 +44,16 @@ function App() {
 ## Variants
 
 ```js
-toast('Default toast');
 toast.success('Success message!');
 toast.error('Something went wrong!');
-toast.info('Some useful info');
 ```
 
 
 ## Customization (Coming Soon)
 
-Style your toasts with Tailwind, classNames, or inline styles. Theme support and placement config coming in the next release.
-
-
-## API
-
-| Function             | Description        |
-| -------------------- | ------------------ |
-| `toast(msg)`         | Show a basic toast |
-| `toast.success(msg)` | Success variant    |
-| `toast.error(msg)`   | Error variant      |
-| `toast.info(msg)`    | Info variant       |
+| Property | Description | Default |
+| -------- | ----------- | ------- |
+| `duration` | Duration of the toast in milliseconds | `3000` |
 
 
 ## Contributing
@@ -74,13 +70,7 @@ We’d love your input!
 
 Start by checking out the [GitHub repo](https://github.com/sudhucodes/react-toast-msg) — issues, discussions, and PRs are welcome. Let's build something amazing together 🚀
 
-## License
-
-MIT © [SudhuCodes](https://github.com/sudhucodes)
-
-
 ## Links
 
 * [GitHub Repo](https://github.com/sudhucodes/react-toast-msg)
-* [Issue Tracker](https://github.com/sudhucodes/react-toast-msg/issues)
 * [npm Package](https://www.npmjs.com/package/react-toast-msg)
