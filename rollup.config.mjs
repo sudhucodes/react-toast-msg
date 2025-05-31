@@ -18,7 +18,11 @@ export default {
     ],
     plugins: [
         resolve(),
-        postcss(),
+        postcss({
+            extract: true,
+            minimize: true,
+            sourceMap: true
+        }),
         babel({
             babelHelpers: 'bundled',
             exclude: 'node_modules/**',

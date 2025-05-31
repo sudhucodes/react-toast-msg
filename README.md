@@ -5,12 +5,10 @@ A lightweight, zero-config, customizable React toast notification library — ju
 ## Features
 
 - Extremely fast and minimal
-- Tree-shakable and zero external CSS
 - Works with both `import` and `require`
 - Easy to style with utility classes
 - Works with React 18+
 
----
 
 ## Installation
 
@@ -18,7 +16,6 @@ A lightweight, zero-config, customizable React toast notification library — ju
 npm install react-toast-msg
 ````
 
----
 
 ## Usage
 
@@ -37,7 +34,6 @@ function App() {
 }
 ```
 
----
 
 ## Variants
 
@@ -48,13 +44,11 @@ toast.error('Something went wrong!');
 toast.info('Some useful info');
 ```
 
----
 
 ## Customization (Coming Soon)
 
 Style your toasts with Tailwind, classNames, or inline styles. Theme support and placement config coming in the next release.
 
----
 
 ## API
 
@@ -65,7 +59,6 @@ Style your toasts with Tailwind, classNames, or inline styles. Theme support and
 | `toast.error(msg)`   | Error variant      |
 | `toast.info(msg)`    | Info variant       |
 
----
 
 ## Contributing
 
@@ -85,7 +78,6 @@ Start by checking out the [GitHub repo](https://github.com/sudhucodes/react-toas
 
 MIT © [SudhuCodes](https://github.com/sudhucodes)
 
----
 
 ## Links
 
