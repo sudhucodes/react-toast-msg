@@ -1,5 +1,7 @@
 # 🚀 react-toast-msg
 
+![Version](https://img.shields.io/npm/v/react-toast-msg) ![License](https://img.shields.io/npm/l/react-toast-msg) ![Downloads](https://img.shields.io/npm/dt/react-toast-msg)
+
 A lightweight, zero-config, customizable React toast notification library — just plug and play.
 
 ## Features
@@ -8,7 +10,7 @@ A lightweight, zero-config, customizable React toast notification library — ju
 - Works with both `import` and `require`
 - Easy to style with utility classes
 - Works with React 18+
-- Supports multiple variants (success, error more coming soon)
+- Supports multiple variants (success, error and more coming soon)
 
 
 ## Installation
@@ -46,6 +48,8 @@ function App() {
 ```js
 toast.success('Success message!');
 toast.error('Something went wrong!');
+
+// More coming soon
 ```
 
 
