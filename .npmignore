@@ -1,0 +1,21 @@
+# Dev files
+rollup.config.js
+rollup.config.mjs
+babel.config.js
+
+# Source code
+src/
+
+# Node & environment
+node_modules/
+.vscode/
+*.log
+.env
+
+# Git & system
+.git/
+.DS_Store
+
+# Files
+CODE_OF_CONDUCT.md
+LICENSE.md

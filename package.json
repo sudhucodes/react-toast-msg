@@ -1,0 +1,43 @@
+{
+    "name": "react-toast-msg",
+    "version": "1.2.4",
+    "description": "A lightweight, customizable React toast notification library with zero-config and fast setup.",
+    "main": "dist/react-toast-msg.umd.js",
+    "module": "dist/react-toast-msg.es.js",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "prepare": "npm run build"
+    },
+    "keywords": [
+        "react",
+        "toast",
+        "notification",
+        "react-toast",
+        "react-toastify",
+        "snackbar",
+        "react-toast-msg",
+        "toast-component"
+    ],
+    "author": "SudhuCodes",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sudhucodes/react-toast-msg.git"
+    },
+    "bugs": {
+        "url": "https://github.com/sudhucodes/react-toast-msg/issues"
+    },
+    "homepage": "https://github.com/sudhucodes/react-toast-msg#readme",
+    "peerDependencies": {
+        "react": "^18 || ^19",
+        "react-dom": "^18 || ^19"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "^4.3.4",
+        "vite": "^6.0.3"
+    }
+}
