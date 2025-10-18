@@ -1,6 +1,6 @@
 {
     "name": "react-toast-msg",
-    "version": "1.2.4",
+    "version": "1.2.5",
     "description": "A lightweight, customizable React toast notification library with zero-config and fast setup.",
     "main": "dist/react-toast-msg.umd.js",
     "module": "dist/react-toast-msg.es.js",
