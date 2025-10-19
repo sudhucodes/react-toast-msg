@@ -13,23 +13,23 @@ var I;
 function oe() {
   if (I) return _;
   I = 1;
-  var n = Symbol.for("react.transitional.element"), i = Symbol.for("react.fragment");
-  function l(f, s, u) {
-    var d = null;
-    if (u !== void 0 && (d = "" + u), s.key !== void 0 && (d = "" + s.key), "key" in s) {
-      u = {};
-      for (var E in s)
-        E !== "key" && (u[E] = s[E]);
-    } else u = s;
-    return s = u.ref, {
+  var n = Symbol.for("react.transitional.element"), c = Symbol.for("react.fragment");
+  function l(d, u, s) {
+    var i = null;
+    if (s !== void 0 && (i = "" + s), u.key !== void 0 && (i = "" + u.key), "key" in u) {
+      s = {};
+      for (var E in u)
+        E !== "key" && (s[E] = u[E]);
+    } else s = u;
+    return u = s.ref, {
       $$typeof: n,
-      type: f,
-      key: d,
-      ref: s !== void 0 ? s : null,
-      props: u
+      type: d,
+      key: i,
+      ref: u !== void 0 ? u : null,
+      props: s
     };
   }
-  return _.Fragment = i, _.jsx = l, _.jsxs = l, _;
+  return _.Fragment = c, _.jsx = l, _.jsxs = l, _;
 }
 var v = {};
 /**
@@ -87,12 +87,12 @@ function se() {
         }
       return null;
     }
-    function i(e) {
+    function c(e) {
       return "" + e;
     }
     function l(e) {
       try {
-        i(e);
+        c(e);
         var r = !1;
       } catch {
         r = !0;
@@ -104,10 +104,10 @@ function se() {
           r,
           "The provided key is an unsupported type %s. This value must be coerced to a string before using it here.",
           a
-        ), i(e);
+        ), c(e);
       }
     }
-    function f(e) {
+    function d(e) {
       if (e === k) return "<>";
       if (typeof e == "object" && e !== null && e.$$typeof === w)
         return "<...>";
@@ -118,14 +118,14 @@ function se() {
         return "<...>";
       }
     }
-    function s() {
+    function u() {
       var e = h.A;
       return e === null ? null : e.getOwner();
     }
-    function u() {
+    function s() {
       return Error("react-stack-top-frame");
     }
-    function d(e) {
+    function i(e) {
       if (C.call(e, "key")) {
         var r = Object.getOwnPropertyDescriptor(e, "key").get;
         if (r && r.isReactWarning) return !1;
@@ -150,7 +150,7 @@ function se() {
         "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
       )), e = this.props.ref, e !== void 0 ? e : null;
     }
-    function U(e, r, t, a, b, O) {
+    function U(e, r, t, a, b, x) {
       var o = t.ref;
       return e = {
         $$typeof: y,
@@ -180,10 +180,10 @@ function se() {
         configurable: !1,
         enumerable: !1,
         writable: !0,
-        value: O
+        value: x
       }), Object.freeze && (Object.freeze(e.props), Object.freeze(e)), e;
     }
-    function A(e, r, t, a, b, O) {
+    function A(e, r, t, a, b, x) {
       var o = r.children;
       if (o !== void 0)
         if (a)
@@ -214,10 +214,10 @@ React keys must be passed directly to JSX without using spread:
           o
         ), F[o + a] = !0);
       }
-      if (o = null, t !== void 0 && (l(t), o = "" + t), d(r) && (l(r.key), o = "" + r.key), "key" in r) {
+      if (o = null, t !== void 0 && (l(t), o = "" + t), i(r) && (l(r.key), o = "" + r.key), "key" in r) {
         t = {};
-        for (var j in r)
-          j !== "key" && (t[j] = r[j]);
+        for (var O in r)
+          O !== "key" && (t[O] = r[O]);
       } else t = r;
       return o && E(
         t,
@@ -226,9 +226,9 @@ React keys must be passed directly to JSX without using spread:
         e,
         o,
         t,
-        s(),
+        u(),
         b,
-        O
+        x
       );
     }
     function S(e) {
@@ -237,7 +237,7 @@ React keys must be passed directly to JSX without using spread:
     function P(e) {
       return typeof e == "object" && e !== null && e.$$typeof === y;
     }
-    var R = te, y = Symbol.for("react.transitional.element"), q = Symbol.for("react.portal"), k = Symbol.for("react.fragment"), J = Symbol.for("react.strict_mode"), V = Symbol.for("react.profiler"), z = Symbol.for("react.consumer"), G = Symbol.for("react.context"), X = Symbol.for("react.forward_ref"), B = Symbol.for("react.suspense"), H = Symbol.for("react.suspense_list"), Z = Symbol.for("react.memo"), w = Symbol.for("react.lazy"), Q = Symbol.for("react.activity"), K = Symbol.for("react.client.reference"), h = R.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, C = Object.prototype.hasOwnProperty, ee = Array.isArray, x = console.createTask ? console.createTask : function() {
+    var R = te, y = Symbol.for("react.transitional.element"), q = Symbol.for("react.portal"), k = Symbol.for("react.fragment"), J = Symbol.for("react.strict_mode"), V = Symbol.for("react.profiler"), z = Symbol.for("react.consumer"), G = Symbol.for("react.context"), X = Symbol.for("react.forward_ref"), B = Symbol.for("react.suspense"), H = Symbol.for("react.suspense_list"), Z = Symbol.for("react.memo"), w = Symbol.for("react.lazy"), Q = Symbol.for("react.activity"), K = Symbol.for("react.client.reference"), h = R.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, C = Object.prototype.hasOwnProperty, ee = Array.isArray, g = console.createTask ? console.createTask : function() {
       return null;
     };
     R = {
@@ -247,8 +247,8 @@ React keys must be passed directly to JSX without using spread:
     };
     var N, Y = {}, $ = R.react_stack_bottom_frame.bind(
       R,
-      u
-    )(), L = x(f(u)), F = {};
+      s
+    )(), L = g(d(s)), F = {};
     v.Fragment = k, v.jsx = function(e, r, t) {
       var a = 1e4 > h.recentlyCreatedOwnerStacks++;
       return A(
@@ -257,7 +257,7 @@ React keys must be passed directly to JSX without using spread:
         t,
         !1,
         a ? Error("react-stack-top-frame") : $,
-        a ? x(f(e)) : L
+        a ? g(d(e)) : L
       );
     }, v.jsxs = function(e, r, t) {
       var a = 1e4 > h.recentlyCreatedOwnerStacks++;
@@ -267,7 +267,7 @@ React keys must be passed directly to JSX without using spread:
         t,
         !0,
         a ? Error("react-stack-top-frame") : $,
-        a ? x(f(e)) : L
+        a ? g(d(e)) : L
       );
     };
   })()), v;
@@ -277,17 +277,21 @@ function ue() {
   return M || (M = 1, process.env.NODE_ENV === "production" ? T.exports = oe() : T.exports = se()), T.exports;
 }
 var p = ue();
-let g;
+let j;
 function ie() {
-  const [n, i] = ne([]);
+  const [n, c] = ne([]);
   return ae(() => {
-    g = (l, f = "default") => {
-      const s = Date.now();
-      i((u) => [...u, { id: s, message: l, type: f }]), setTimeout(() => {
-        i((u) => u.filter((d) => d.id !== s));
+    j = (l, d = "default") => {
+      const u = Date.now();
+      c((s) => [...s, { id: u, message: l, type: d, leaving: !1 }]), setTimeout(() => {
+        c(
+          (s) => s.map((i) => i.id === u ? { ...i, leaving: !0 } : i)
+        ), setTimeout(() => {
+          c((s) => s.filter((i) => i.id !== u));
+        }, 400);
       }, 3e3);
     };
-  }, []), /* @__PURE__ */ p.jsx("div", { className: "toast-container", children: n.map((l) => /* @__PURE__ */ p.jsxs("div", { className: `toast toast-${l.type || "default"}`, children: [
+  }, []), /* @__PURE__ */ p.jsx("div", { className: "toast-container", children: n.map((l) => /* @__PURE__ */ p.jsxs("div", { className: `toast toast-${l.type || "default"} ${l.leaving ? "toast-exit" : "toast-enter"}`, children: [
     /* @__PURE__ */ p.jsxs("svg", { width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg", children: [
       /* @__PURE__ */ p.jsx("path", { d: "M21.8006 9.99999C22.2573 12.2413 21.9318 14.5714 20.8785 16.6018C19.8251 18.6322 18.1075 20.24 16.0121 21.1573C13.9167 22.0746 11.5702 22.2458 9.36391 21.6424C7.15758 21.0389 5.2248 19.6974 3.88789 17.8414C2.55097 15.9854 1.89073 13.7272 2.01728 11.4434C2.14382 9.15952 3.04949 6.98808 4.58326 5.29116C6.11703 3.59424 8.18619 2.47442 10.4457 2.11844C12.7052 1.76247 15.0184 2.19185 16.9996 3.33499", stroke: "white", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }),
       /* @__PURE__ */ p.jsx("path", { d: "M9 11L12 14L22 4", stroke: "white", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" })
@@ -295,14 +299,14 @@ function ie() {
     l.message
   ] }, l.id)) });
 }
-function c(n, i = "default") {
-  g && g(n, i);
+function f(n, c = "default") {
+  j && j(n, c);
 }
-c.success = (n) => c(n, "success");
-c.error = (n) => c(n, "error");
-c.warning = (n) => c(n, "warning");
-c.info = (n) => c(n, "info");
+f.success = (n) => f(n, "success");
+f.error = (n) => f(n, "error");
+f.warning = (n) => f(n, "warning");
+f.info = (n) => f(n, "info");
 export {
   ie as ToastContainer,
-  c as toast
+  f as toast
 };
