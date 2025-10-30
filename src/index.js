@@ -1,2 +1,2 @@
-export { ToastContainer, toast } from "./ToastContainer";
 import "./style.css";
+export { ToastContainer, toast } from "./toast-container";

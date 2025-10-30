@@ -1,3 +1,17 @@
+:root {
+    --default-bg-color: oklch(27.8% 0.033 256.848);
+    --default-text-color: #fff;
+
+    --success-bg-color: oklch(72.3% 0.219 149.579);
+    --success-text-color: #fff;
+
+    --error-bg-color: oklch(63.7% 0.237 25.331);
+    --error-text-color: #fff;
+
+    --warning-bg-color: oklch(79.5% 0.184 86.047);
+    --warning-text-color: #fff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +21,7 @@
 .toast-container {
     position: fixed;
     font-family: sans-serif;
-    bottom: 1rem;
+    top: 1rem;
     right: 1rem;
     display: flex;
     flex-direction: column;
@@ -21,10 +35,10 @@
     align-items: center;
     gap: 8px;
     background: #0f172b;
-    color: white;
-    padding: 10px 12px;
+    color: #fff;
+    padding: 12px;
     font-size: 14px;
-    border-radius: 6px;
+    border-radius: 8px;
     min-width: 200px;
     max-width: 300px;
     will-change: transform, opacity;
@@ -32,8 +46,6 @@
 
 .toast svg {
     flex-shrink: 0;
-    width: 18px;
-    height: 18px;
 }
 
 /* Enter animation */
@@ -48,47 +60,43 @@
 
 /* Toast types */
 .toast-success {
-    background: #4caf50;
+    background: var(--success-bg-color);
 }
 
 .toast-error {
-    background: #f44336;
+    background: var(--error-bg-color);
 }
 
 .toast-warning {
-    background: #ff9800;
-}
-
-.toast-info {
-    background: #2196f3;
+    background: var(--warning-bg-color);
 }
 
 /* Keyframes */
 @keyframes toastEnter {
     0% {
         opacity: 0;
-        transform: translateY(20px) scale(0.95);
+        transform: translateX(20px);
     }
 
     60% {
         opacity: 1;
-        transform: translateY(-2px) scale(1);
+        transform: translateX(-2px);
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateX(0);
     }
 }
 
 @keyframes toastExit {
     0% {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateX(0);
     }
 
     100% {
         opacity: 0;
-        transform: translateY(20px) scale(0.9);
+        transform: translateX(20px);
     }
 }
