@@ -1,16 +1,27 @@
-# 🚀 react-toast-msg
+# React Toast MSG - (SudhuCodes)
 
-![Version](https://img.shields.io/npm/v/react-toast-msg) ![License](https://img.shields.io/npm/l/react-toast-msg) ![Downloads](https://img.shields.io/npm/dt/react-toast-msg)
+A lightweight and customizable React toast notification library.
 
-A lightweight, zero-config, customizable React toast notification library — just plug and play.
+![Version](https://img.shields.io/npm/v/react-toast-msg)
+![License](https://img.shields.io/npm/l/react-toast-msg)
+![Downloads](https://img.shields.io/npm/dt/react-toast-msg)
+
+![React Toast MSG](https://image.gif 'React Toast MSG')
+
+---
 
 ## Features
 
--   Extremely fast and minimal
--   Lightweight and modern
--   Easy to style with utility classes
--   Works with React 18+
--   Supports multiple variants (success, error and more)
+| Feature                | Description                                  |
+| ---------------------- | -------------------------------------------- |
+| Lightweight and fast   | Minimal dependency and highly performant     |
+| Zero configuration     | Works instantly with default settings        |
+| Custom auto-close time | Set duration per toast dynamically           |
+| Multiple toast types   | success, error, warning, default             |
+| React 18+ support      | Fully compatible with React 18 and above     |
+| Easy styling           | Customize with simple CSS or utility classes |
+
+---
 
 ## Installation
 
@@ -18,9 +29,11 @@ A lightweight, zero-config, customizable React toast notification library — ju
 npm i react-toast-msg
 ```
 
+---
+
 ## Usage
 
-### 1. Add the `ToastContainer` at the root of your app (once):
+### 1. Add `ToastContainer` at the root of your application:
 
 ```jsx
 import { toast, ToastContainer } from 'react-toast-msg';
@@ -31,40 +44,80 @@ export default function Example() {
         <>
             <ToastContainer />
 
-            <button onClick={() => toast('This is a default toast')}>Show Default</button>
-            <button onClick={() => toast.success('This is a success toast')}>Show Success</button>
-            <button onClick={() => toast.error('This is an error toast')}>Show Error</button>
-            <button onClick={() => toast.warning('This is a warning toast')}>Show Warning</button>
+            <button onClick={() => toast('Default toast')}>Default</button>
+            <button onClick={() => toast.success('Success toast')}>Success</button>
+            <button onClick={() => toast.error('Error toast')}>Error</button>
+            <button onClick={() => toast.warning('Warning toast')}>Warning</button>
         </>
     );
 }
 ```
 
-> Note: Make sure to import the CSS file in your app.
+---
 
-## Available variants
+## Custom Auto-Close Duration
+
+You can now define a custom timeout per toast.
+
+| Usage Example                    | Description                          |
+| -------------------------------- | ------------------------------------ |
+| `toast('Message', 1000)`         | Closes after 1000ms (1 second)       |
+| `toast.success('Saved', 5000)`   | Success toast closes after 5 seconds |
+| `toast('Text', 'success', 2000)` | Type + duration together             |
+
+> Note: Duration is in milliseconds and default value is 3000ms
+
+### Example:
+
+```jsx
+<button onClick={() => toast('This will close in 1 second', 1000)}>
+    Show 1s Toast
+</button>
+
+<button onClick={() => toast.success('Success - 5s', 5000)}>
+    Show 5s Success Toast
+</button>
+```
+
+---
+
+## ToastContainer Props
+
+| Prop      | Type   | Default | Description                                       |
+| --------- | ------ | ------- | ------------------------------------------------- |
+| autoClose | number | 3000    | Default close time in milliseconds for all toasts |
+
+Usage:
+
+```jsx
+<ToastContainer autoClose={5000} /> // Default 5-second timeout
+```
+
+---
+
+## Available Toast Variants
 
 ```js
-toast('Default message!');
-toast.success('Success message!');
-toast.error('Something went wrong!');
-toast.warning('Something is not right!');
-
-// More coming soon
+toast('Default message');
+toast.success('Success message');
+toast.error('Error occurred');
+toast.warning('Warning message');
 ```
+
+---
 
 ## Contributing
 
-react-toast-msg is an open-source project — and you can help make it better! Whether you want to:
+Contributions are welcome. You can:
 
--   Suggest new features
--   Improve performance or accessibility
--   Fix bugs
--   Refactor code or improve documentation
+-   Report issues
+-   Suggest features
+-   Submit pull requests
+-   Improve documentation or code quality
 
-We’d love your input!
+Repository: [https://github.com/sudhucodes/react-toast-msg](https://github.com/sudhucodes/react-toast-msg)
 
-Start by checking out the [GitHub repo](https://github.com/sudhucodes/react-toast-msg) — issues, discussions, and PRs are welcome. Let's build something amazing together 🚀
+---
 
 ## License
 
