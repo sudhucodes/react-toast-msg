@@ -6,9 +6,10 @@ A lightweight and customizable React toast notification library.
 ![License](https://img.shields.io/npm/l/react-toast-msg)
 ![Downloads](https://img.shields.io/npm/dt/react-toast-msg)
 
-![React Toast MSG](https://image.gif 'React Toast MSG')
 
 ---
+
+![React Toast MSG](https://github.com/user-attachments/assets/c91fd623-a733-4634-88b7-2bb0f30366ff 'React Toast MSG')
 
 ## Features
 
