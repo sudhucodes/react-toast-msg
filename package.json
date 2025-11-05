@@ -1,17 +1,26 @@
 {
     "name": "react-toast-msg",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "description": "A lightweight, customizable React toast notification library with zero-config and fast setup.",
-    "main": "dist/react-toast-msg.umd.js",
-    "module": "dist/react-toast-msg.es.js",
     "files": [
         "dist"
     ],
     "scripts": {
         "dev": "vite",
-        "build": "vite build",
-        "prepare": "npm run build"
+        "prettier": "prettier --write src",
+        "build": "tsup"
     },
+    "prettier": {
+        "printWidth": 120,
+        "semi": true,
+        "tabWidth": 4,
+        "singleQuote": true,
+        "trailingComma": "none",
+        "arrowParens": "avoid"
+    },
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
     "keywords": [
         "react",
         "toast",
@@ -28,16 +37,17 @@
         "type": "git",
         "url": "https://github.com/sudhucodes/react-toast-msg.git"
     },
-    "bugs": {
-        "url": "https://github.com/sudhucodes/react-toast-msg/issues"
-    },
-    "homepage": "https://github.com/sudhucodes/react-toast-msg#readme",
     "peerDependencies": {
         "react": "^18 || ^19",
         "react-dom": "^18 || ^19"
     },
     "devDependencies": {
+        "@types/react": "^19.2.2",
+        "@types/react-dom": "^19.2.2",
         "@vitejs/plugin-react": "^4.3.4",
+        "prettier": "^3.6.2",
+        "tsup": "^8.5.0",
+        "typescript": "^5.9.3",
         "vite": "^6.0.3"
     }
 }

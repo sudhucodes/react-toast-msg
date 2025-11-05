@@ -6,7 +6,6 @@ A lightweight and customizable React toast notification library.
 ![License](https://img.shields.io/npm/l/react-toast-msg)
 ![Downloads](https://img.shields.io/npm/dt/react-toast-msg)
 
-
 ---
 
 ![React Toast MSG](https://github.com/user-attachments/assets/c91fd623-a733-4634-88b7-2bb0f30366ff 'React Toast MSG')
@@ -38,7 +37,6 @@ npm i react-toast-msg
 
 ```jsx
 import { toast, ToastContainer } from 'react-toast-msg';
-import 'react-toast-msg/dist/react-toast-msg.css';
 
 export default function Example() {
     return (
@@ -49,6 +47,8 @@ export default function Example() {
             <button onClick={() => toast.success('Success toast')}>Success</button>
             <button onClick={() => toast.error('Error toast')}>Error</button>
             <button onClick={() => toast.warning('Warning toast')}>Warning</button>
+
+            <button onClick={() => toast.success('Success toast', 5000)}>Success with duration</button>
         </>
     );
 }
@@ -62,6 +62,7 @@ You can now define a custom timeout per toast.
 
 | Usage Example                    | Description                          |
 | -------------------------------- | ------------------------------------ |
+| `toast('Message')`               | Default timeout                      |
 | `toast('Message', 1000)`         | Closes after 1000ms (1 second)       |
 | `toast.success('Saved', 5000)`   | Success toast closes after 5 seconds |
 | `toast('Text', 'success', 2000)` | Type + duration together             |
@@ -111,10 +112,10 @@ toast.warning('Warning message');
 
 Contributions are welcome. You can:
 
--   Report issues
--   Suggest features
--   Submit pull requests
--   Improve documentation or code quality
+- Report issues
+- Suggest features
+- Submit pull requests
+- Improve documentation or code quality
 
 Repository: [https://github.com/sudhucodes/react-toast-msg](https://github.com/sudhucodes/react-toast-msg)
 

@@ -1,5 +1,8 @@
-export const SuccessIcon = ({ size = 24, strokeWidth = 2 }) => (
-    <svg xmlns="http://www.w3.org/2000/svg"
+import { IconProps } from "../types";
+
+export const SuccessIcon = ({ size = 24, strokeWidth = 2 }: IconProps) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
         width={size}
         height={size}
         viewBox="0 0 24 24"
@@ -14,8 +17,9 @@ export const SuccessIcon = ({ size = 24, strokeWidth = 2 }) => (
     </svg>
 );
 
-export const ErrorIcon = ({ size = 24, strokeWidth = 2 }) => (
-    <svg xmlns="http://www.w3.org/2000/svg"
+export const ErrorIcon = ({ size = 24, strokeWidth = 2 }: IconProps) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
         width={size}
         height={size}
         viewBox="0 0 24 24"
@@ -32,7 +36,7 @@ export const ErrorIcon = ({ size = 24, strokeWidth = 2 }) => (
     </svg>
 );
 
-export const WarningIcon = ({ size = 24, strokeWidth = 2 }) => (
+export const WarningIcon = ({ size = 24, strokeWidth = 2 }: IconProps) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size}
