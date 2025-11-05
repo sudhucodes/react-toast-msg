@@ -1,4 +1,4 @@
-import { IconProps } from "../types";
+import { IconProps } from '../types';
 
 export const SuccessIcon = ({ size = 24, strokeWidth = 2 }: IconProps) => (
     <svg

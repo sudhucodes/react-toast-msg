@@ -3,12 +3,12 @@ import { defineConfig, Options } from "tsup";
 const injectStyleFunction = `
 function injectStyle(css) {
   if (!css || typeof document === 'undefined') return;
-  if (document.getElementById('react-toast-msg-style')) return;
+  if (document.getElementById('rtm-style')) return;
 
   const head = document.head || document.getElementsByTagName('head')[0];
   const style = document.createElement('style');
   style.type = 'text/css';
-  style.id = 'react-toast-msg-style';
+  style.id = 'rtm-style';
 
   style.appendChild(document.createTextNode(css));
   head.appendChild(style);

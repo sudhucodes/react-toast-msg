@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Toast } from './toast';
 import { getToastIcon } from '../utilities/get-icon';
 import { ToastContainerProps, ToastItem, ToastType } from '../types';
+import { cn } from '../utilities/cn';
 
 let showToastFn: ((message: string, type?: ToastType, duration?: number) => void) | null = null;
 
@@ -25,7 +26,7 @@ export function ToastContainer({ autoClose = 3000 }: ToastContainerProps) {
     }, [autoClose]);
 
     return (
-        <div className="toast-container">
+        <div className={cn('toast-container')}>
             {toasts.map(t => (
                 <Toast key={t.id} message={t.message} type={t.type} icon={getToastIcon(t.type)} leaving={t.leaving} />
             ))}
