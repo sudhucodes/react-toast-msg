@@ -6,7 +6,7 @@ import { cn } from '../utilities/cn';
 
 let showToastFn: ((message: string, type?: ToastType, duration?: number) => void) | null = null;
 
-export function ToastContainer({ autoClose = 3000 }: ToastContainerProps) {
+export function ToastContainer({ autoClose = 3000, position = 'top-right' }: ToastContainerProps) {
     const [toasts, setToasts] = useState<ToastItem[]>([]);
 
     useEffect(() => {
@@ -23,12 +23,19 @@ export function ToastContainer({ autoClose = 3000 }: ToastContainerProps) {
                 }, 400);
             }, closeTime);
         };
-    }, [autoClose]);
+    }, [autoClose, position]);
 
     return (
-        <div className={cn('toast-container')}>
+        <div className={cn(`toast-container toast-container-${position}`)}>
             {toasts.map(t => (
-                <Toast key={t.id} message={t.message} type={t.type} icon={getToastIcon(t.type)} leaving={t.leaving} />
+                <Toast
+                    key={t.id}
+                    message={t.message}
+                    type={t.type}
+                    icon={getToastIcon(t.type)}
+                    leaving={t.leaving}
+                    position={position}
+                />
             ))}
         </div>
     );

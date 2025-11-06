@@ -1,6 +1,6 @@
 {
     "name": "react-toast-msg",
-    "version": "2.1.2",
+    "version": "2.2.0",
     "description": "A lightweight, customizable React toast notification library with zero-config and fast setup.",
     "files": [
         "dist"
@@ -29,6 +29,7 @@
         "react-toastify",
         "snackbar",
         "react-toast-msg",
+        "rtm",
         "toast-component"
     ],
     "author": "SudhuCodes",
@@ -37,6 +38,10 @@
         "type": "git",
         "url": "https://github.com/sudhucodes/react-toast-msg.git"
     },
+    "bugs": {
+        "url": "https://github.com/sudhucodes/react-toast-msg/issues"
+    },
+    "homepage": "https://github.com/sudhucodes/react-toast-msg",
     "peerDependencies": {
         "react": "^18 || ^19",
         "react-dom": "^18 || ^19"

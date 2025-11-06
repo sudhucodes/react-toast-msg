@@ -3,7 +3,7 @@ import { toast, ToastContainer } from "react-toast-msg";
 export default function App() {
     return (
         <div className="app">
-            <ToastContainer />
+            <ToastContainer autoClose={3000} position="top-right" />
             <button onClick={() => toast("This is a default toast")}>Show Default</button>
             <button onClick={() => toast.success("This is a success toast")}>Show Success</button>
             <button onClick={() => toast.error("This is an error toast")}>Show Error</button>

@@ -41,7 +41,7 @@ import { toast, ToastContainer } from 'react-toast-msg';
 export default function Example() {
     return (
         <>
-            <ToastContainer />
+            <ToastContainer autoClose={3000} position="top-right" />
 
             <button onClick={() => toast('Default toast')}>Default</button>
             <button onClick={() => toast.success('Success toast')}>Success</button>
@@ -85,14 +85,15 @@ You can now define a custom timeout per toast.
 
 ## ToastContainer Props
 
-| Prop      | Type   | Default | Description                                       |
-| --------- | ------ | ------- | ------------------------------------------------- |
-| autoClose | number | 3000    | Default close time in milliseconds for all toasts |
+| Prop      | Type   | Default     | Description                                       |
+| --------- | ------ | ----------- | ------------------------------------------------- |
+| autoClose | number | 3000        | Default close time in milliseconds for all toasts |
+| position  | string | 'top-right' | Position of the toast container                   |
 
 Usage:
 
 ```jsx
-<ToastContainer autoClose={5000} /> // Default 5-second timeout
+<ToastContainer autoClose={3000} position="top-right" /> // Default
 ```
 
 ---
