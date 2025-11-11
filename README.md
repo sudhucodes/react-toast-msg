@@ -6,20 +6,7 @@ A lightweight and customizable React toast notification library.
 ![License](https://img.shields.io/npm/l/react-toast-msg)
 ![Downloads](https://img.shields.io/npm/dt/react-toast-msg)
 
----
-
 ![React Toast MSG](https://github.com/user-attachments/assets/c91fd623-a733-4634-88b7-2bb0f30366ff 'React Toast MSG')
-
-## Features
-
-| Feature                | Description                                  |
-| ---------------------- | -------------------------------------------- |
-| Lightweight and fast   | Minimal dependency and highly performant     |
-| Zero configuration     | Works instantly with default settings        |
-| Custom auto-close time | Set duration per toast dynamically           |
-| Multiple toast types   | success, error, warning, default             |
-| React 18+ support      | Fully compatible with React 18 and above     |
-| Easy styling           | Customize with simple CSS or utility classes |
 
 ---
 
@@ -28,7 +15,6 @@ A lightweight and customizable React toast notification library.
 ```bash
 npm i react-toast-msg
 ```
-
 ---
 
 ## Usage
