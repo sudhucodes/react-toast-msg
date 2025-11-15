@@ -21,8 +21,8 @@ importers:
         specifier: 19.2.0
         version: 19.2.0(react@19.2.0)
       react-toast-msg:
-        specifier: ^2.1.2
-        version: 2.1.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        specifier: ^2.2.6
+        version: 2.2.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
     devDependencies:
       '@tailwindcss/postcss':
         specifier: ^4
@@ -1630,8 +1630,8 @@ packages:
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
-  react-toast-msg@2.1.2:
-    resolution: {integrity: sha512-usE2DttRF3fg1b1uaIk+oBnl2417YMVPYaFlUbQmQ17+PIYYBgXP/knKTmZrs2XycVHzBnlBQNqSPoOPOM9lkA==}
+  react-toast-msg@2.2.6:
+    resolution: {integrity: sha512-byMeV2UKQ2Av9ZXfG+TFuIdlki3ppm67ZqMLmd8aUiXbnMc24sBmtIVefFK2thVic2eef3btXw355b6UnxDCfg==}
     peerDependencies:
       react: ^18 || ^19
       react-dom: ^18 || ^19
@@ -3618,7 +3618,7 @@ snapshots:
 
   react-is@16.13.1: {}
 
-  react-toast-msg@2.1.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+  react-toast-msg@2.2.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
     dependencies:
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
