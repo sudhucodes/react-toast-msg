@@ -1,6 +1,6 @@
 {
     "name": "react-toast-msg",
-    "version": "2.2.4",
+    "version": "2.2.6",
     "description": "A lightweight, customizable React toast notification library with zero-config and fast setup.",
     "files": [
         "dist"
@@ -41,7 +41,7 @@
     "bugs": {
         "url": "https://github.com/sudhucodes/react-toast-msg/issues"
     },
-    "homepage": "https://github.com/sudhucodes/react-toast-msg",
+    "homepage": "https://rtm.sudhucodes.com",
     "peerDependencies": {
         "react": "^18 || ^19",
         "react-dom": "^18 || ^19"
@@ -52,7 +52,6 @@
         "@vitejs/plugin-react": "^4.3.4",
         "prettier": "^3.6.2",
         "tsup": "^8.5.0",
-        "typescript": "^5.9.3",
-        "vite": "^6.0.3"
+        "typescript": "^5.9.3"
     }
 }
