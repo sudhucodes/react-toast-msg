@@ -63,10 +63,10 @@ export default function Page() {
                 library, designed to display customizable notification messages.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-                <button onClick={() => showToast("success")} className="btn bg-green-500 hover:bg-green-600">Success</button>
-                <button onClick={() => showToast("error")} className="btn bg-red-500 hover:bg-red-600">Error</button>
-                <button onClick={() => showToast("info")} className="btn bg-yellow-500 hover:bg-yellow-600">Info</button>
-                <button onClick={() => showToast("default")} className="btn bg-gray-700 hover:bg-gray-800">Default</button>
+                <button onClick={() => showToast("success")} className="btn">Success</button>
+                <button onClick={() => showToast("error")} className="btn">Error</button>
+                <button onClick={() => showToast("info")} className="btn">Info</button>
+                <button onClick={() => showToast("default")} className="btn">Default</button>
             </div>
             <div className="flex items-center gap-3 font-mono mt-10 bg-gray-100 rounded-md px-4 py-3">
                 <span>npm install react-toast-msg</span>
@@ -80,7 +80,9 @@ export default function Page() {
             </div>
             <p className="absolute bottom-10 text-center text-sm text-gray-500 mt-6">
                 Powered by {' '}
-                <a href="https://sudhucodes.com" className="text-gray-800 hover:underline">
+                <a
+                    href="https://sudhucodes.com?utm_source=react-toast-msg&utm_medium=website"
+                    className="text-gray-800">
                     SudhuCodes
                 </a>
             </p>
