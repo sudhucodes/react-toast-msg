@@ -13,6 +13,7 @@
     flex-direction: column;
     gap: 10px;
     z-index: 9999;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
 .rtm-toast-container-top-right {
@@ -47,10 +48,11 @@
     gap: 8px;
     background: var(--default-bg-color);
     color: var(--white-color);
-    padding: 12px 12px;
+    padding: 16px;
     min-height: 44px;
     font-size: 14px;
     border-radius: 8px;
+    font-weight: 500;
     min-width: 200px;
     max-width: 320px;
     will-change: transform, opacity;
@@ -131,11 +133,11 @@
 }
 
 .rtm-toast-enter-top-right {
-    animation: toastEnterRight 0.45s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
+    animation: toastEnterFromBottom 0.5s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
 }
 
 .rtm-toast-exit-top-right {
-    animation: toastExitRight 0.4s cubic-bezier(0.06, 0.71, 0.55, 1) forwards;
+    animation: toastExitFromBottom 0.4s cubic-bezier(0.06, 0.71, 0.55, 1) forwards;
 }
 
 .rtm-toast-enter-top-left {
@@ -160,4 +162,29 @@
 
 .rtm-toast-exit-bottom-left {
     animation: toastExitLeft 0.4s cubic-bezier(0.06, 0.71, 0.55, 1) forwards;
+}
+
+
+@keyframes toastEnterFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(-0) scale(1);
+    }
+}
+
+@keyframes toastExitFromBottom {
+    0% {
+        opacity: 1;
+        transform: translateY(-0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100%) scale(0.98);
+    }
 }

@@ -1,12 +1,12 @@
 {
     "name": "react-toast-msg",
-    "version": "2.2.6",
+    "version": "2.3.0",
     "description": "A lightweight, customizable React toast notification library with zero-config and fast setup.",
     "files": [
         "dist"
     ],
     "scripts": {
-        "dev": "vite",
+        "dev": "tsup --watch",
         "prettier": "prettier --write src",
         "build": "tsup"
     },

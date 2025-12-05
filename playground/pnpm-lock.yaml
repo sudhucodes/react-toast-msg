@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  react-toast-msg: link:C:/Users/sudhanshu/AppData/Local/pnpm/global/5/node_modules/react-toast-msg
+
 importers:
 
   .:
@@ -15,8 +18,8 @@ importers:
         specifier: ^19.2.0
         version: 19.2.0(react@19.2.0)
       react-toast-msg:
-        specifier: link:..
-        version: link:..
+        specifier: link:C:/Users/sudhanshu/AppData/Local/pnpm/global/5/node_modules/react-toast-msg
+        version: link:C:/Users/sudhanshu/AppData/Local/pnpm/global/5/node_modules/react-toast-msg
     devDependencies:
       '@eslint/js':
         specifier: ^9.39.1
