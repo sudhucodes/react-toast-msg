@@ -1,190 +1,81 @@
 :root {
-    --white-color: #fff;
-    --default-bg-color: #1e2939;
-    --success-bg-color: #00c950;
-    --error-bg-color: #fb2c36;
-    --warning-bg-color: #f0b100;
+    --toast-bg: #ffffff;
+    --toast-color: #000000;
+    --toast-border: #f0f0f0;
+    --toast-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .rtm-toast-container {
     position: fixed;
-    font-family: sans-serif;
+    bottom: 0px;
+    right: 0px;
+    width: 356px;
+    max-width: 100vw;
+    margin: 0;
+    list-style: none;
+    z-index: 9999;
+    outline: none;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    z-index: 9999;
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-}
-
-.rtm-toast-container-top-right {
-    top: 1rem;
-    right: 1rem;
-    align-items: flex-end;
-}
-
-.rtm-toast-container-top-left {
-    top: 1rem;
-    left: 1rem;
-    align-items: flex-start;
-}
-
-.rtm-toast-container-bottom-right {
-    bottom: 1rem;
-    right: 1rem;
-    align-items: flex-end;
-    flex-direction: column-reverse;
-}
-
-.rtm-toast-container-bottom-left {
-    bottom: 1rem;
-    left: 1rem;
-    align-items: flex-start;
-    flex-direction: column-reverse;
+    padding: 1.5rem;
+    gap: 14px;
+    pointer-events: none;
+    justify-content: flex-end;
 }
 
 .rtm-toast {
+    pointer-events: auto;
     display: flex;
     align-items: center;
-    gap: 8px;
-    background: var(--default-bg-color);
-    color: var(--white-color);
+    gap: 12px;
+    background: var(--toast-bg);
+    color: var(--toast-color);
     padding: 16px;
-    min-height: 44px;
-    font-size: 14px;
-    border-radius: 8px;
+    font-size: 13px;
+    border-radius: 6px;
     font-weight: 500;
-    min-width: 200px;
-    max-width: 320px;
-    will-change: transform, opacity;
-}
-
-.rtm-toast-success {
-    background: var(--success-bg-color);
-}
-
-.rtm-toast-error {
-    background: var(--error-bg-color);
-}
-
-.rtm-toast-warning {
-    background: var(--warning-bg-color);
+    width: 100%;
+    border: 1px solid var(--toast-border);
+    box-shadow: var(--toast-shadow);
+    will-change: transform, opacity, height;
+    box-sizing: border-box;
 }
 
 .rtm-toast svg {
     flex-shrink: 0;
 }
 
-@keyframes toastEnterRight {
+@keyframes toastEnter {
     0% {
         opacity: 0;
-        transform: translateX(20px);
-    }
-
-    60% {
-        opacity: 1;
-        transform: translateX(-2px);
+        transform: translateY(100%);
     }
 
     100% {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
-@keyframes toastExitRight {
+@keyframes toastExit {
     0% {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 
     100% {
         opacity: 0;
-        transform: translateX(100%);
+        transform: translateY(10px);
     }
 }
 
-@keyframes toastEnterLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-
-    60% {
-        opacity: 1;
-        transform: translateX(2px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
+.rtm-toast-enter {
+    animation: toastEnter 0.4s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
+    overflow: hidden;
 }
 
-@keyframes toastExitLeft {
-    0% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-}
-
-.rtm-toast-enter-top-right {
-    animation: toastEnterFromBottom 0.5s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
-}
-
-.rtm-toast-exit-top-right {
-    animation: toastExitFromBottom 0.4s cubic-bezier(0.06, 0.71, 0.55, 1) forwards;
-}
-
-.rtm-toast-enter-top-left {
-    animation: toastEnterLeft 0.45s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
-}
-
-.rtm-toast-exit-top-left {
-    animation: toastExitLeft 0.4s cubic-bezier(0.06, 0.71, 0.55, 1) forwards;
-}
-
-.rtm-toast-enter-bottom-right {
-    animation: toastEnterRight 0.45s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
-}
-
-.rtm-toast-exit-bottom-right {
-    animation: toastExitRight 0.4s cubic-bezier(0.06, 0.71, 0.55, 1) forwards;
-}
-
-.rtm-toast-enter-bottom-left {
-    animation: toastEnterLeft 0.45s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
-}
-
-.rtm-toast-exit-bottom-left {
-    animation: toastExitLeft 0.4s cubic-bezier(0.06, 0.71, 0.55, 1) forwards;
-}
-
-
-@keyframes toastEnterFromBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px) scale(0.98);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(-0) scale(1);
-    }
-}
-
-@keyframes toastExitFromBottom {
-    0% {
-        opacity: 1;
-        transform: translateY(-0) scale(1);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(-100%) scale(0.98);
-    }
+.rtm-toast-exit {
+    animation: toastExit 0.3s cubic-bezier(0.06, 0.71, 0.55, 1) forwards;
+    overflow: hidden;
 }

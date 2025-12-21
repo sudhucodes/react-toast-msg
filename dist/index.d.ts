@@ -7,7 +7,7 @@ interface ToastContainerProps {
     position?: ToastPosition;
 }
 
-declare function ToastContainer({ autoClose, position }: ToastContainerProps): react_jsx_runtime.JSX.Element;
+declare function ToastContainer({ autoClose }: ToastContainerProps): react_jsx_runtime.JSX.Element;
 declare function toast(message: string, type?: ToastType | number, duration?: number): void;
 declare namespace toast {
     var success: (message: string, duration?: number) => void;

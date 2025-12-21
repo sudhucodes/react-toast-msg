@@ -1,6 +1,6 @@
 import { IconProps } from '../types';
 
-export const SuccessIcon = ({ size = 24, strokeWidth = 2 }: IconProps) => (
+export const SuccessIcon = ({ size = 20, strokeWidth = 2 }: IconProps) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size}
@@ -17,7 +17,7 @@ export const SuccessIcon = ({ size = 24, strokeWidth = 2 }: IconProps) => (
     </svg>
 );
 
-export const ErrorIcon = ({ size = 24, strokeWidth = 2 }: IconProps) => (
+export const ErrorIcon = ({ size = 20, strokeWidth = 2 }: IconProps) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size}
@@ -36,7 +36,7 @@ export const ErrorIcon = ({ size = 24, strokeWidth = 2 }: IconProps) => (
     </svg>
 );
 
-export const WarningIcon = ({ size = 24, strokeWidth = 2 }: IconProps) => (
+export const WarningIcon = ({ size = 20, strokeWidth = 2 }: IconProps) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size}
