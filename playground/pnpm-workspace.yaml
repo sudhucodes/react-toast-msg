@@ -1,2 +1,2 @@
 overrides:
-  react-toast-msg: link:C:/Users/sudhanshu/AppData/Local/pnpm/global/5/node_modules/react-toast-msg
+    react-toast-msg: link:../
