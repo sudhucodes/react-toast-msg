@@ -4,11 +4,11 @@ import { ToastType } from '../types';
 export function getToastIcon(type: ToastType) {
     switch (type) {
         case 'success':
-            return <SuccessIcon size={20} />;
+            return <SuccessIcon />;
         case 'error':
-            return <ErrorIcon size={20} />;
+            return <ErrorIcon />;
         case 'warning':
-            return <WarningIcon size={18} />;
+            return <WarningIcon />;
 
         default:
             return null;

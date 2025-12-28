@@ -6,7 +6,7 @@ import { cn } from '../utilities/cn';
 
 let showToastFn: ((message: string, type?: ToastType, duration?: number) => void) | null = null;
 
-export function ToastContainer({ autoClose = 3000 }: ToastContainerProps) {
+export function ToastContainer({ autoClose = 3000, closeButton = false }: ToastContainerProps) {
     const [toasts, setToasts] = useState<ToastItem[]>([]);
 
     useEffect(() => {
@@ -17,9 +17,7 @@ export function ToastContainer({ autoClose = 3000 }: ToastContainerProps) {
             setToasts(prev => [...prev, { id, message, type, leaving: false }]);
 
             setTimeout(() => {
-                setToasts(prev =>
-                    prev.map(t => (t.id === id ? { ...t, leaving: true } : t))
-                );
+                setToasts(prev => prev.map(t => (t.id === id ? { ...t, leaving: true } : t)));
 
                 setTimeout(() => {
                     setToasts(prev => prev.filter(t => t.id !== id));
@@ -29,14 +27,21 @@ export function ToastContainer({ autoClose = 3000 }: ToastContainerProps) {
     }, [autoClose]);
 
     return (
-        <div className={cn('toast-container')}>
+        <div
+            className={cn(
+                'pointer-events-none fixed inset-0 z-9999 flex flex-col items-end justify-end gap-2 p-4 text-sm'
+            )}
+        >
             {toasts.map(t => (
                 <Toast
                     key={t.id}
+                    id={t.id}
                     message={t.message}
+                    setToasts={setToasts}
                     type={t.type}
                     icon={getToastIcon(t.type)}
                     leaving={t.leaving}
+                    closeButton={closeButton}
                 />
             ))}
         </div>

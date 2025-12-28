@@ -15,6 +15,7 @@ A lightweight and customizable React toast notification library.
 ```bash
 npm i react-toast-msg
 ```
+
 ---
 
 ## Usage
@@ -27,7 +28,7 @@ import { toast, ToastContainer } from 'react-toast-msg';
 export default function Example() {
     return (
         <>
-            <ToastContainer autoClose={3000} position="top-right" />
+            <ToastContainer autoClose={3000} closeButton={true} />
 
             <button onClick={() => toast('Default toast')}>Default</button>
             <button onClick={() => toast.success('Success toast')}>Success</button>
@@ -71,15 +72,15 @@ You can now define a custom timeout per toast.
 
 ## ToastContainer Props
 
-| Prop      | Type   | Default     | Description                                       |
-| --------- | ------ | ----------- | ------------------------------------------------- |
-| autoClose | number | 3000        | Default close time in milliseconds for all toasts |
-| position  | string | 'top-right' | Position of the toast container                   |
+| Prop        | Type    | Default | Description                                       |
+| ----------- | ------- | ------- | ------------------------------------------------- |
+| autoClose   | number  | 3000    | Default close time in milliseconds for all toasts |
+| closeButton | boolean | false   | Close button visibility for all toasts            |
 
 Usage:
 
 ```jsx
-<ToastContainer autoClose={3000} position="top-right" /> // Default
+<ToastContainer autoClose={3000} closeButton={false} /> // Default
 ```
 
 ---
