@@ -1,56 +1,32 @@
 import { IconProps } from '../types';
+import { cn } from '../utilities/cn';
 
-export const SuccessIcon = ({ size = 20, strokeWidth = 2 }: IconProps) => (
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-    >
-        <circle cx={12} cy={12} r={10} />
-        <path d="m9 12 2 2 4-4" />
+export const SuccessIcon = ({ className }: IconProps) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={cn('size-6', className)}>
+        <path
+            fillRule="evenodd"
+            d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+            clipRule="evenodd"
+        />
     </svg>
 );
 
-export const ErrorIcon = ({ size = 20, strokeWidth = 2 }: IconProps) => (
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="lucide lucide-circle-x-icon lucide-circle-x"
-    >
-        <circle cx={12} cy={12} r={10} />
-        <path d="m15 9-6 6" />
-        <path d="m9 9 6 6" />
+export const ErrorIcon = ({ className }: IconProps) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={cn('size-6', className)}>
+        <path
+            fillRule="evenodd"
+            d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+            clipRule="evenodd"
+        />
     </svg>
 );
 
-export const WarningIcon = ({ size = 20, strokeWidth = 2 }: IconProps) => (
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="lucide lucide-triangle-alert-icon lucide-triangle-alert"
-    >
-        <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
-        <path d="M12 9v4" />
-        <path d="M12 17h.01" />
+export const WarningIcon = ({ className }: IconProps) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={cn('size-6', className)}>
+        <path
+            fillRule="evenodd"
+            d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+            clipRule="evenodd"
+        />
     </svg>
 );

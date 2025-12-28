@@ -1,6 +1,6 @@
 {
     "name": "react-toast-msg",
-    "version": "2.3.0",
+    "version": "2.5.0",
     "description": "A lightweight, customizable React toast notification library with zero-config and fast setup.",
     "files": [
         "dist"
@@ -8,15 +8,9 @@
     "scripts": {
         "dev": "tsup --watch",
         "prettier": "prettier --write src",
-        "build": "tsup"
-    },
-    "prettier": {
-        "printWidth": 120,
-        "semi": true,
-        "tabWidth": 4,
-        "singleQuote": true,
-        "trailingComma": "none",
-        "arrowParens": "avoid"
+        "build": "pnpm build:ts && pnpm build:css",
+        "build:ts": "tsup",
+        "build:css": "pnpx @tailwindcss/cli -i ./src/style.css -o ./dist/style.css"
     },
     "main": "dist/index.js",
     "module": "dist/index.mjs",
@@ -47,11 +41,18 @@
         "react-dom": "^18 || ^19"
     },
     "devDependencies": {
+        "@tailwindcss/cli": "^4.1.18",
         "@types/react": "^19.2.2",
         "@types/react-dom": "^19.2.2",
         "@vitejs/plugin-react": "^4.3.4",
         "prettier": "^3.6.2",
+        "prettier-plugin-tailwindcss": "^0.7.2",
+        "tailwindcss": "^4.1.18",
         "tsup": "^8.5.0",
         "typescript": "^5.9.3"
+    },
+    "dependencies": {
+        "clsx": "^2.1.1",
+        "tailwind-merge": "^3.4.0"
     }
 }

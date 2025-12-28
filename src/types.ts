@@ -8,23 +8,22 @@ export interface ToastItem {
 }
 
 export interface ToastProps {
+    id: number;
     message: string;
     type?: ToastType;
     icon?: React.ReactNode;
     leaving?: boolean;
-    position?: ToastPosition;
+    setToasts?: React.Dispatch<React.SetStateAction<ToastItem[]>>;
+    closeButton?: boolean;
 }
-
-export type ToastPosition = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left';
 
 export interface ToastContainerProps {
     autoClose?: number;
-    position?: ToastPosition;
+    closeButton?: boolean;
 }
 
 export type ShowToastFn = (message: string, type?: ToastType, duration?: number) => void;
 
 export interface IconProps {
-    size?: number;
-    strokeWidth?: number;
+    className?: string;
 }

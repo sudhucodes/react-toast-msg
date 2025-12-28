@@ -1,11 +1,6 @@
-const PREFIX = 'rtm'; // react-toast-msg
+import { twMerge } from 'tailwind-merge';
+import clsx, { ClassValue } from 'clsx';
 
-export function cn(className?: string) {
-    if (!className) return '';
-
-    return className
-        .split(' ')
-        .filter(Boolean)
-        .map(cls => `${PREFIX}-${cls}`)
-        .join(' ');
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs));
 }
