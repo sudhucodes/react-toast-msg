@@ -1,30 +1,56 @@
 import { useState, useEffect } from 'react';
 import { Toast } from './toast';
 import { getToastIcon } from '../utilities/get-icon';
-import { ToastContainerProps, ToastItem, ToastType } from '../types';
+import {
+    ToastContainerProps,
+    ToastItem,
+    ToastOptions,
+    ToastType
+} from '../types';
 import { cn } from '../utilities/cn';
 
-let showToastFn: ((message: string, type?: ToastType, duration?: number) => void) | null = null;
+let showToastFn: ((message: string, options?: ToastOptions) => void) | null =
+    null;
 
-export function ToastContainer({ autoClose = 3000, closeButton = false }: ToastContainerProps) {
+export function ToastContainer({
+    autoClose = 3000,
+    closeButton = false
+}: ToastContainerProps) {
     const [toasts, setToasts] = useState<ToastItem[]>([]);
 
     useEffect(() => {
-        showToastFn = (message, type = 'default', duration?: number) => {
+        showToastFn = (message, options = {}) => {
+            const {
+                type = 'default',
+                duration,
+                closeButton: toastCloseButton
+            } = options;
+
             const id = Date.now();
             const closeTime = duration || autoClose;
 
-            setToasts(prev => [...prev, { id, message, type, leaving: false }]);
+            setToasts(prev => [
+                ...prev,
+                {
+                    id,
+                    message,
+                    type,
+                    leaving: false,
+                    closeButton: toastCloseButton ?? closeButton
+                }
+            ]);
 
             setTimeout(() => {
-                setToasts(prev => prev.map(t => (t.id === id ? { ...t, leaving: true } : t)));
+                setToasts(prev =>
+                    prev.map(t => (t.id === id ? { ...t, leaving: true } : t))
+                );
 
                 setTimeout(() => {
                     setToasts(prev => prev.filter(t => t.id !== id));
                 }, 300);
             }, closeTime);
         };
-    }, [autoClose]);
+    }, [autoClose, closeButton]);
 
     return (
         <div
@@ -41,23 +67,23 @@ export function ToastContainer({ autoClose = 3000, closeButton = false }: ToastC
                     type={t.type}
                     icon={getToastIcon(t.type)}
                     leaving={t.leaving}
-                    closeButton={closeButton}
+                    closeButton={t.closeButton}
                 />
             ))}
         </div>
     );
 }
 
-export function toast(message: string, type?: ToastType | number, duration?: number) {
+export function toast(message: string, options?: ToastOptions) {
     if (!showToastFn) return;
-
-    if (typeof type === 'number') {
-        showToastFn(message, 'default', type);
-    } else {
-        showToastFn(message, type, duration);
-    }
+    showToastFn(message, options);
 }
 
-toast.success = (message: string, duration?: number) => toast(message, 'success', duration);
-toast.error = (message: string, duration?: number) => toast(message, 'error', duration);
-toast.warning = (message: string, duration?: number) => toast(message, 'warning', duration);
+toast.success = (message: string, options?: ToastOptions) =>
+    toast(message, { ...options, type: 'success' });
+
+toast.error = (message: string, options?: ToastOptions) =>
+    toast(message, { ...options, type: 'error' });
+
+toast.warning = (message: string, options?: ToastOptions) =>
+    toast(message, { ...options, type: 'warning' });

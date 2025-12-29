@@ -5,7 +5,14 @@ export interface ToastItem {
     message: string;
     type: ToastType;
     leaving: boolean;
+    closeButton?: boolean;
 }
+
+export type ToastOptions = {
+    type?: ToastType;
+    duration?: number;
+    closeButton?: boolean;
+};
 
 export interface ToastProps {
     id: number;
@@ -22,7 +29,11 @@ export interface ToastContainerProps {
     closeButton?: boolean;
 }
 
-export type ShowToastFn = (message: string, type?: ToastType, duration?: number) => void;
+export type ShowToastFn = (
+    message: string,
+    type?: ToastType,
+    duration?: number
+) => void;
 
 export interface IconProps {
     className?: string;
