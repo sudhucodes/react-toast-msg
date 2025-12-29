@@ -13,7 +13,7 @@
     "next": "16.0.10",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "react-toast-msg": "^2.3.0"
+    "react-toast-msg": "^2.5.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

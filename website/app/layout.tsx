@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ToastContainer } from "react-toast-msg";
 
 const inter = Inter({
     variable: "--font-sans",
@@ -39,7 +38,6 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <ToastContainer />
                 {children}
             </body>
         </html>
