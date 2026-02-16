@@ -1,0 +1,25 @@
+---
+title: "React Toast Msg"
+description: "A simple and customizable toast notification library for React."
+---
+
+## Installation
+
+```package-install copyable
+react-toast-msg
+```
+
+## Usage
+
+```tsx copyable
+import { ToastContainer, toast } from "react-toast-msg";
+
+function App() {
+    return (
+        <div>
+            <ToastContainer />
+            <button onClick={() => toast.success("Hello World")}>Show Toast</button>
+        </div>
+    );  
+}
+```

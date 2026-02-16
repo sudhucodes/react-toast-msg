@@ -9,14 +9,17 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "lucide-react": "^0.552.0",
     "next": "16.0.10",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "react-toast-msg": "^2.5.5"
+    "react-toast-msg": "^2.5.5",
+    "tailwind-merge": "^3.4.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

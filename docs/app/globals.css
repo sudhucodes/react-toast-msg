@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @import "react-toast-msg/style.css";
+@import "docstra/css";
+@plugin "@tailwindcss/typography";
 
 @layer base {
     body {
