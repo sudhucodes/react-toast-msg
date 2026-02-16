@@ -1,0 +1,40 @@
+---
+title: "Advanced Usage"
+description: "Customize your toasts with durations, close buttons, and more."
+---
+
+Beyond simple messages, you can customize how your toasts behave and look.
+
+## Custom Duration
+
+You can override the default auto-close duration by passing a third argument to the `toast` function (in milliseconds).
+
+```tsx copyable
+import { toast } from "react-toast-msg";
+
+// This toast will stay for 10 seconds
+toast.success("Long message", "success", 10000);
+```
+
+## Manual Close Button
+
+You can enable or disable the close button globally in `ToastContainer` or per-toast via the `toast` methods.
+
+```tsx copyable
+// Enabling close button per toast
+toast.error("Critical error!", "error", 5000); 
+```
+
+> [!TIP]
+> Use shorter durations for simple notifications and longer durations for critical errors that require user attention.
+
+## Global Configuration
+
+The `ToastContainer` accepts props that apply to all toasts.
+
+```tsx copyable
+<ToastContainer autoClose={5000} closeButton={true} />
+```
+
+- `autoClose`: Default duration for all toasts in milliseconds.
+- `closeButton`: Whether to show a close button by default.

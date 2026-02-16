@@ -1,0 +1,46 @@
+---
+title: "Examples"
+description: "Common patterns and examples for using react-toast-msg."
+---
+
+Here are some common usage patterns for `react-toast-msg`.
+
+## Form Submission
+
+Show a success or error toast based on form submission results.
+
+```tsx copyable
+const handleSubmit = async (data) => {
+  try {
+    await submitData(data);
+    toast.success("Data saved successfully!");
+  } catch (err) {
+    toast.error("Failed to save data. Please try again.");
+  }
+};
+```
+
+## Loading States (Manual)
+
+While the library doesn't have a built-in promise handler yet, you can easily simulate it:
+
+```tsx copyable
+const handlePromise = async () => {
+  // Show a default info toast
+  toast.default("Processing...");
+  
+  const result = await myPromise();
+  
+  if (result.success) {
+    toast.success("Completed!");
+  } else {
+    toast.error("Error occurred.");
+  }
+};
+```
+
+## Custom Layouts
+
+Since `react-toast-msg` is lightweight, you can use it alongside other UI components easily.
+
+> Check out the [Playground](https://rtm.sudhucodes.com/playground) for more interactive examples!

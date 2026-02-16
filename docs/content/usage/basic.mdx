@@ -1,0 +1,38 @@
+---
+title: "Basic Usage"
+description: "Learn the basics of triggering toasts."
+---
+
+The `toast` function is a versatile tool for showing notifications. 
+
+## Simple Notifications
+
+The most common way to show a toast is by using one of the shorthand methods:
+
+```tsx copyable
+import { toast } from "react-toast-msg";
+
+// Success toast
+toast.success("Action completed!");
+
+// Error toast
+toast.error("Something went wrong.");
+
+// Warning toast
+toast.warning("Check your settings.");
+
+// Default/Info toast
+toast.default("Here is some information.");
+```
+
+## Custom Message
+
+You can pass any string as the first argument to these methods.
+
+```tsx
+toast.success("Order #12345 has been shipped!");
+```
+
+## Timing
+
+By default, toasts disappear after **3 seconds**. You can change the global duration in `ToastContainer` or set it per-toast (see [Advanced Usage](/docs/usage/advanced)).

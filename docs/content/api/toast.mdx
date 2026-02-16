@@ -1,0 +1,40 @@
+---
+title: "Toast API"
+description: "Reference for the toast function and its methods."
+---
+
+The `toast` object provides several methods to trigger notifications with different styles.
+
+## toast(message, type, duration)
+
+The main function for showing a toast.
+
+| Parameter | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `message` | `string` | - | The message to display. |
+| `type` | `ToastType` | `'default'` | The style of the toast: `'success'`, `'error'`, `'warning'`, `'default'`. |
+| `duration` | `number` | `3000` | Time in ms before the toast auto-closes. |
+
+## Methods
+
+### toast.success(message, duration?)
+
+Shorthand for `toast(message, 'success', duration)`.
+
+### toast.error(message, duration?)
+
+Shorthand for `toast(message, 'error', duration)`.
+
+### toast.warning(message, duration?)
+
+Shorthand for `toast(message, 'warning', duration)`.
+
+### toast.default(message, duration?)
+
+Shorthand for `toast(message, 'default', duration)`.
+
+## Example
+
+```tsx
+toast.success("Profile updated", 2000);
+```

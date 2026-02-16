@@ -1,0 +1,32 @@
+---
+title: "Installation"
+description: "How to install react-toast-msg in your project."
+---
+
+Install `react-toast-msg` using your preferred package manager:
+
+```package-install copyable
+react-toast-msg
+```
+
+## Peer Dependencies
+
+Ensure you have `react` and `react-dom` installed (version 18 or 19).
+
+```json
+"peerDependencies": {
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
+}
+```
+
+## Styling
+
+Since `react-toast-msg` uses Tailwind CSS for styling, you should import the CSS file in your main application entry point (e.g., `app/layout.tsx` or `src/index.tsx`):
+
+```tsx copyable
+import "react-toast-msg/style.css";
+```
+
+> [!NOTE]
+> If you are using Tailwind CSS in your project, ensure that your configuration includes the necessary styles or that you are importing the provided CSS.

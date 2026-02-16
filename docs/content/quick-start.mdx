@@ -1,0 +1,51 @@
+---
+title: "Quick Start"
+description: "Get up and running with react-toast-msg in seconds."
+---
+
+Follow these steps to add toast notifications to your React app.
+
+## 1. Add the ToastContainer
+
+Place the `ToastContainer` at the root of your application (usually in your main layout or app component). This component will render all active toasts.
+
+```tsx copyable
+import { ToastContainer } from "react-toast-msg";
+import "react-toast-msg/style.css";
+
+function App() {
+  return (
+    <>
+      <ToastContainer />
+      {/* Your application components */}
+    </>
+  );
+}
+```
+
+## 2. Trigger Toasts
+
+Use the `toast` function to trigger notifications from anywhere in your application.
+
+```tsx copyable
+import { toast } from "react-toast-msg";
+
+function MyComponent() {
+  return (
+    <button onClick={() => toast.success("Successfully saved!")}>
+      Show Success Toast
+    </button>
+  );
+}
+```
+
+## Available Toast Types
+
+You can use the following shorthand methods for different notification types:
+
+```tsx
+toast.success("Succes message");
+toast.error("Error message");
+toast.warning("Warning message");
+toast.default("Default message");
+```

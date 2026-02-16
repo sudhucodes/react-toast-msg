@@ -1,0 +1,47 @@
+---
+title: "Customization"
+description: "How to customize the appearance of your toasts."
+---
+
+`react-toast-msg` is designed to be highly customizable using Tailwind CSS.
+
+## Custom Icons
+
+You can provide a custom icon for any toast:
+
+```tsx
+toast.success("Message with custom icon", {
+  icon: <i className="fas fa-check-circle" />
+});
+```
+
+## Styling with Tailwind
+
+The library uses Tailwind CSS internally. You can override styles using the `className` prop if you are using the underlying components, or by extending your Tailwind configuration.
+
+### ToastContainer Props
+
+You can pass standard HTML attributes to the `ToastContainer` to style the container itself.
+
+```tsx
+<ToastContainer className="my-custom-container" />
+```
+
+## Advanced Styling
+
+If you need more control, you can target the CSS classes used by the library:
+
+- `.rtm-toast`: The individual toast element.
+- `.rtm-toast-success`: Success variant.
+- `.rtm-toast-error`: Error variant.
+- `.rtm-toast-warning`: Warning variant.
+- `.rtm-toast-default`: Default variant.
+
+Example CSS:
+
+```css
+.rtm-toast {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+```

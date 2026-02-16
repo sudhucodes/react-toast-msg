@@ -1,0 +1,47 @@
+---
+title: "Types"
+description: "TypeScript definitions for react-toast-msg."
+---
+
+`react-toast-msg` is built with TypeScript and provides first-class type definitions.
+
+## ToastType
+
+```typescript
+export type ToastType = 'success' | 'error' | 'warning' | 'default';
+```
+
+## ToastOptions
+
+Used when triggering a toast (internally or via future API extensions).
+
+```typescript
+export type ToastOptions = {
+    type?: ToastType;
+    duration?: number;
+    closeButton?: boolean;
+};
+```
+
+## ToastContainerProps
+
+Props accepted by the `ToastContainer` component.
+
+```typescript
+export interface ToastContainerProps {
+    autoClose?: number;
+    closeButton?: boolean;
+}
+```
+
+## ShowToastFn
+
+The signature for the `toast` function.
+
+```typescript
+export type ShowToastFn = (
+    message: string,
+    type?: ToastType,
+    duration?: number
+) => void;
+```
