@@ -10,14 +10,30 @@ Here are some common usage patterns for `react-toast-msg`.
 Show a success or error toast based on form submission results.
 
 ```tsx copyable
-const handleSubmit = async (data) => {
-  try {
-    await submitData(data);
-    toast.success("Data saved successfully!");
-  } catch (err) {
-    toast.error("Failed to save data. Please try again.");
-  }
-};
+import { FormSyncForm } from "formsync";
+import { toast } from "react-toast-msg";
+
+export default function Example() {
+    return (
+        <main>
+            <FormSyncForm
+                formId="YOUR_FORM_ID"
+                onSuccess={(res) => toast.success(res.message)}
+                onSubmitError={(err) => toast.error(err.message)}
+            >
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    required
+                />
+                <button type="submit">
+                    Submit
+                </button>
+            </FormSyncForm>
+        </main>
+    );
+}
 ```
 
 ## Loading States (Manual)
@@ -26,16 +42,16 @@ While the library doesn't have a built-in promise handler yet, you can easily si
 
 ```tsx copyable
 const handlePromise = async () => {
-  // Show a default info toast
-  toast.default("Processing...");
+    // Show a default info toast
+    toast("Processing...");
   
-  const result = await myPromise();
+    const result = await myPromise();
   
-  if (result.success) {
-    toast.success("Completed!");
-  } else {
-    toast.error("Error occurred.");
-  }
+    if (result.success) {
+        toast.success("Completed!");
+    } else {
+        toast.error("Error occurred.");
+    }
 };
 ```
 
@@ -43,4 +59,4 @@ const handlePromise = async () => {
 
 Since `react-toast-msg` is lightweight, you can use it alongside other UI components easily.
 
-> Check out the [Playground](https://rtm.sudhucodes.com/playground) for more interactive examples!
+> Check out the [Playground](/) for more interactive examples!

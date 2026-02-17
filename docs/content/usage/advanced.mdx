@@ -13,7 +13,7 @@ You can override the default auto-close duration by passing a third argument to 
 import { toast } from "react-toast-msg";
 
 // This toast will stay for 10 seconds
-toast.success("Long message", "success", 10000);
+toast.success("Long message", { duration: 10000 });
 ```
 
 ## Manual Close Button
@@ -22,11 +22,10 @@ You can enable or disable the close button globally in `ToastContainer` or per-t
 
 ```tsx copyable
 // Enabling close button per toast
-toast.error("Critical error!", "error", 5000); 
+toast.error("Critical error!", { duration: 5000, closeButton: true }); 
 ```
 
-> [!TIP]
-> Use shorter durations for simple notifications and longer durations for critical errors that require user attention.
+> TIP: Use shorter durations for simple notifications and longer durations for critical errors that require user attention.
 
 ## Global Configuration
 

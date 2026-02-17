@@ -11,19 +11,26 @@ Place the `ToastContainer` at the root of your application (usually in your main
 
 ```tsx copyable
 import { ToastContainer } from "react-toast-msg";
-import "react-toast-msg/style.css";
 
 function App() {
-  return (
-    <>
-      <ToastContainer />
-      {/* Your application components */}
-    </>
-  );
+    return (
+        <>
+            <ToastContainer />
+            {/* Your application components */}
+        </>
+    );
 }
 ```
 
-## 2. Trigger Toasts
+## 2. Import styles
+
+Import the CSS file in your main css file (e.g., `app/globals.css` or `src/index.css`):
+
+```tsx copyable
+import "react-toast-msg/style.css";
+```
+
+## 3. Trigger Toasts
 
 Use the `toast` function to trigger notifications from anywhere in your application.
 
@@ -31,11 +38,11 @@ Use the `toast` function to trigger notifications from anywhere in your applicat
 import { toast } from "react-toast-msg";
 
 function MyComponent() {
-  return (
-    <button onClick={() => toast.success("Successfully saved!")}>
-      Show Success Toast
-    </button>
-  );
+    return (
+        <button onClick={() => toast.success("Successfully saved!")}>
+            Show Success Toast
+        </button>
+    );
 }
 ```
 
@@ -43,9 +50,9 @@ function MyComponent() {
 
 You can use the following shorthand methods for different notification types:
 
-```tsx
+```tsx copyable
 toast.success("Succes message");
 toast.error("Error message");
 toast.warning("Warning message");
-toast.default("Default message");
+toast("Default message");
 ```

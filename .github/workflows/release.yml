@@ -1,0 +1,48 @@
+name: Create Release on Version Change
+
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - package.json
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 2
+
+            - name: Get previous version
+              id: prev
+              run: |
+                  git show HEAD^:package.json > prev.json || echo '{}' > prev.json
+                  echo "version=$(jq -r .version prev.json)" >> $GITHUB_OUTPUT
+
+            - name: Get current version
+              id: curr
+              run: |
+                  echo "version=$(jq -r .version package.json)" >> $GITHUB_OUTPUT
+
+            - name: Check if version changed
+              id: check
+              run: |
+                  if [ "${{ steps.prev.outputs.version }}" != "${{ steps.curr.outputs.version }}" ]; then
+                    echo "changed=true" >> $GITHUB_OUTPUT
+                  else
+                    echo "changed=false" >> $GITHUB_OUTPUT
+                  fi
+
+            - name: Create Release
+              if: steps.check.outputs.changed == 'true'
+              uses: softprops/action-gh-release@v2
+              with:
+                  tag_name: v${{ steps.curr.outputs.version }}
+                  name: v${{ steps.curr.outputs.version }}
+                  generate_release_notes: true
+              env:
+                  GITHUB_TOKEN: ${{ secrets.RTM_PUBLIC_REPO_TOKEN }}

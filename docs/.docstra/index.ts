@@ -2,13 +2,12 @@
 import * as d0 from "../content/api/container.mdx?docstra";
 import * as d1 from "../content/api/toast.mdx?docstra";
 import * as d2 from "../content/api/types.mdx?docstra";
-import * as d3 from "../content/customization.mdx?docstra";
-import * as d4 from "../content/examples.mdx?docstra";
-import * as d5 from "../content/index.mdx?docstra";
-import * as d6 from "../content/installation.mdx?docstra";
-import * as d7 from "../content/quick-start.mdx?docstra";
-import * as d8 from "../content/usage/advanced.mdx?docstra";
-import * as d9 from "../content/usage/basic.mdx?docstra";
+import * as d3 from "../content/examples.mdx?docstra";
+import * as d4 from "../content/index.mdx?docstra";
+import * as d5 from "../content/installation.mdx?docstra";
+import * as d6 from "../content/quick-start.mdx?docstra";
+import * as d7 from "../content/usage/advanced.mdx?docstra";
+import * as d8 from "../content/usage/basic.mdx?docstra";
 
 export const docs = [
   {
@@ -45,8 +44,8 @@ export const docs = [
     }
   },
   {
-    slug: "customization",
-    path: "customization.mdx",
+    slug: "examples",
+    path: "examples.mdx",
     data: {
         metadata: d3.metadata,
         raw: d3.raw,
@@ -56,8 +55,8 @@ export const docs = [
     }
   },
   {
-    slug: "examples",
-    path: "examples.mdx",
+    slug: "index",
+    path: "index.mdx",
     data: {
         metadata: d4.metadata,
         raw: d4.raw,
@@ -67,8 +66,8 @@ export const docs = [
     }
   },
   {
-    slug: "index",
-    path: "index.mdx",
+    slug: "installation",
+    path: "installation.mdx",
     data: {
         metadata: d5.metadata,
         raw: d5.raw,
@@ -78,8 +77,8 @@ export const docs = [
     }
   },
   {
-    slug: "installation",
-    path: "installation.mdx",
+    slug: "quick-start",
+    path: "quick-start.mdx",
     data: {
         metadata: d6.metadata,
         raw: d6.raw,
@@ -89,8 +88,8 @@ export const docs = [
     }
   },
   {
-    slug: "quick-start",
-    path: "quick-start.mdx",
+    slug: "usage/advanced",
+    path: "usage/advanced.mdx",
     data: {
         metadata: d7.metadata,
         raw: d7.raw,
@@ -100,25 +99,14 @@ export const docs = [
     }
   },
   {
-    slug: "usage/advanced",
-    path: "usage/advanced.mdx",
+    slug: "usage/basic",
+    path: "usage/basic.mdx",
     data: {
         metadata: d8.metadata,
         raw: d8.raw,
         tableOfContents: d8.tableOfContents,
         mdxContent: d8.mdxContent,
         lastUpdated: d8.lastUpdated,
-    }
-  },
-  {
-    slug: "usage/basic",
-    path: "usage/basic.mdx",
-    data: {
-        metadata: d9.metadata,
-        raw: d9.raw,
-        tableOfContents: d9.tableOfContents,
-        mdxContent: d9.mdxContent,
-        lastUpdated: d9.lastUpdated,
     }
   }
 ];

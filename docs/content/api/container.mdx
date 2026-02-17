@@ -9,25 +9,43 @@ The `ToastContainer` component is the host for all your toast notifications. It 
 
 The `ToastContainer` component accepts the following props:
 
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `autoClose` | `number` | `3000` | Global default duration for auto-closing toasts. |
-| `closeButton` | `boolean` | `false` | Whether to show a close button on all toasts by default. |
-
+<table>
+    <thead>
+        <tr>
+            <th>Props</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>autoClose</td>
+            <td>number</td>
+            <td>3000</td>
+            <td>Global default duration for auto-closing toasts.</td>
+        </tr>
+        <tr>
+            <td>closeButton</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>Whether to show a close button on all toasts by default.</td>
+        </tr>
+    </tbody>
+</table>
 ## Usage
 
 ```tsx copyable
 import { ToastContainer } from "react-toast-msg";
 
 function Layout({ children }) {
-  return (
-    <>
-      {children}
-      <ToastContainer autoClose={5000} closeButton />
-    </>
-  );
+    return (
+        <>
+            {children}
+            <ToastContainer autoClose={5000} closeButton />
+        </>
+    );
 }
 ```
 
-> [!IMPORTANT]
-> Make sure to only render one `ToastContainer` in your application to avoid duplicate notifications.
+> IMPORTANT: Make sure to only render one `ToastContainer` in your application to avoid duplicate notifications.

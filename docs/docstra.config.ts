@@ -10,7 +10,7 @@ export default defineDocstraConfig({
     },
     contentDir: 'content',
     feedback: {
-        enabled: false,
+        enabled: true,
         formSyncFormID: "",
     },
     navbar: {
@@ -21,8 +21,9 @@ export default defineDocstraConfig({
             className: "h-7 w-auto",
         },
         links: [
-            { name: "Guides", href: "/docs" },
-            { name: "APIs", href: "/docs/api/toast" },
+            { name: "Usage", href: "/docs/usage/basic" },
+            { name: "API", href: "/docs/api/toast" },
+            { name: "Examples", href: "/docs/examples" },
         ],
     },
     sidebar: {
@@ -65,11 +66,6 @@ export default defineDocstraConfig({
                         href: '/docs/usage/advanced',
                         icon: 'Settings2Icon'
                     },
-                    {
-                        name: 'Customization',
-                        href: '/docs/customization',
-                        icon: 'PaletteIcon'
-                    }
                 ],
             },
             {
