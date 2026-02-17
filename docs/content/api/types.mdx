@@ -15,33 +15,29 @@ export type ToastType = 'success' | 'error' | 'warning' | 'default';
 
 Used when triggering a toast (internally or via future API extensions).
 
-```typescript
-export type ToastOptions = {
-    type?: ToastType;
-    duration?: number;
-    closeButton?: boolean;
-};
-```
+| Props | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| type | ToastType | 'default' | The style of the toast. |
+| duration | number | 3000 | Time in ms before auto-close. |
+| closeButton | boolean | false | Whether to show a close button on all toasts by default. |
+
 
 ## ToastContainerProps
 
 Props accepted by the `ToastContainer` component.
 
-```typescript
-export interface ToastContainerProps {
-    autoClose?: number;
-    closeButton?: boolean;
-}
-```
+| Props | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| autoClose | number | 3000 | Global default duration for auto-closing toasts. |
+| closeButton | boolean | false | Whether to show a close button on all toasts by default. |
+
 
 ## ShowToastFn
 
 The signature for the `toast` function.
 
-```typescript
-export type ShowToastFn = (
-    message: string,
-    type?: ToastType,
-    duration?: number
-) => void;
-```
+| Props | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| message | string | - | The message to display. |
+| type | ToastType | 'default' | The style of the toast. |
+| duration | number | 3000 | Time in ms before auto-close. |

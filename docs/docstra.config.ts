@@ -58,13 +58,11 @@ export default defineDocstraConfig({
                 items: [
                     {
                         name: 'Basic Usage',
-                        href: '/docs/usage/basic',
-                        icon: 'FileTextIcon'
+                        href: '/docs/usage/basic'
                     },
                     {
                         name: 'Advanced Usage',
-                        href: '/docs/usage/advanced',
-                        icon: 'Settings2Icon'
+                        href: '/docs/usage/advanced'
                     },
                 ],
             },
@@ -73,18 +71,15 @@ export default defineDocstraConfig({
                 items: [
                     {
                         name: 'Toast API',
-                        href: '/docs/api/toast',
-                        icon: 'CodeIcon'
+                        href: '/docs/api/toast'
                     },
                     {
                         name: 'Container API',
-                        href: '/docs/api/container',
-                        icon: 'BoxIcon'
+                        href: '/docs/api/container'
                     },
                     {
                         name: 'Types',
-                        href: '/docs/api/types',
-                        icon: 'TypeIcon'
+                        href: '/docs/api/types'
                     }
                 ],
             },
