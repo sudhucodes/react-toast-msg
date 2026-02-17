@@ -5,4 +5,4 @@ const nextConfig: NextConfig = {
   /* config options here */
 };
 
-export default withDocstra(nextConfig as any);
+export default withDocstra(nextConfig);
