@@ -6,7 +6,7 @@
         "dist"
     ],
     "scripts": {
-        "dev": "tsup --watch",
+        "dev": "tsup --watch ./src",
         "prettier": "prettier --write src",
         "build": "pnpm build:ts && pnpm build:css",
         "build:ts": "tsup",
