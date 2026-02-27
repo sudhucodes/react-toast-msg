@@ -1,12 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Toast } from './toast';
 import { getToastIcon } from '../utilities/get-icon';
-import {
-    ToastContainerProps,
-    ToastItem,
-    ToastOptions,
-    ToastType
-} from '../types';
+import { ToastContainerProps, ToastItem, ToastOptions } from '../types';
 import { cn } from '../utilities/cn';
 
 let showToastFn: ((message: string, options?: ToastOptions) => void) | null =
@@ -27,7 +22,9 @@ export function ToastContainer({
             } = options;
 
             const id = Date.now();
-            const closeTime = duration || autoClose;
+
+            // ✅ Use nullish coalescing instead of ||
+            const closeTime = duration ?? autoClose;
 
             setToasts(prev => [
                 ...prev,
@@ -40,15 +37,20 @@ export function ToastContainer({
                 }
             ]);
 
-            setTimeout(() => {
-                setToasts(prev =>
-                    prev.map(t => (t.id === id ? { ...t, leaving: true } : t))
-                );
-
+            // ✅ Only set timeout if value is >= 0
+            if (typeof closeTime === 'number' && closeTime >= 0) {
                 setTimeout(() => {
-                    setToasts(prev => prev.filter(t => t.id !== id));
-                }, 300);
-            }, closeTime);
+                    setToasts(prev =>
+                        prev.map(t =>
+                            t.id === id ? { ...t, leaving: true } : t
+                        )
+                    );
+
+                    setTimeout(() => {
+                        setToasts(prev => prev.filter(t => t.id !== id));
+                    }, 300);
+                }, closeTime);
+            }
         };
     }, [autoClose, closeButton]);
 
