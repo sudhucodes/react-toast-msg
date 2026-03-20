@@ -34,6 +34,24 @@ Shorthand for `toast.warning(message, duration)`.
 
 Shorthand for `toast(message, duration)`.
 
+### toast.promise(promise, data, options?)
+
+Displays a loading toast that automatically updates to success or error when the promise resolves or rejects.
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| promise | Promise | The promise to track. |
+| data | object | Content for different states (see below). |
+| options | ToastOptions | Optional configuration. |
+
+#### Data Object
+
+| Field | Type | Description |
+| :--- | :--- | :--- |
+| loading | string | Message to show while the promise is pending. |
+| success | string \| (data) => string | Message or function generating message on success. |
+| error | string \| (err) => string | Message or function generating message on error. |
+
 ## Example
 
 ```tsx copyable

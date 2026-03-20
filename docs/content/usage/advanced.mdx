@@ -37,3 +37,21 @@ The `ToastContainer` accepts props that apply to all toasts.
 
 - `autoClose`: Default duration for all toasts in milliseconds.
 - `closeButton`: Whether to show a close button by default.
+
+## Promises
+
+Handle asynchronous operations seamlessly with `toast.promise`. It manages loading, success, and error states for you.
+
+```tsx copyable
+import { toast } from "react-toast-msg";
+
+const fetchData = async () => {
+    const promise = new Promise((resolve) => setTimeout(() => resolve({ name: "User" }), 2000));
+    
+    toast.promise(promise, {
+        loading: "Fetching data...",
+        success: (data) => `Hello, ${data.name}!`,
+        error: (err) => `Error: ${err.message}`,
+    });
+};
+```

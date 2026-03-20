@@ -10,7 +10,23 @@ export default function App() {
             <button onClick={() => toast.error("This is an error toast")} className={className}>Show Error</button>
             <button onClick={() => toast.warning("This is a warning toast")} className={className}>Show Warning</button>
             <button onClick={() => toast("This is a default toast", { duration: 5000 })} className={className}>Show Default with duration</button>
-            <button onClick={() => toast('This is a default toast', 'success', { duration: 5000 })} className={className}>Show Default with duration</button>
+            <button onClick={() => toast.loading('Loading something...')} className={className}>Show Loading</button>
+            <button onClick={() => toast.promise(
+                new Promise(resolve => setTimeout(resolve, 2000)),
+                {
+                    loading: 'Revalidating cache...',
+                    success: 'Cache revalidated successfully',
+                    error: 'Failed to revalidate cache'
+                }
+            )} className={className}>Show Promise (Success)</button>
+            <button onClick={() => toast.promise(
+                new Promise((_, reject) => setTimeout(reject, 2000)),
+                {
+                    loading: 'Deleting user...',
+                    success: 'User deleted successfully',
+                    error: 'Failed to delete user'
+                }
+            )} className={className}>Show Promise (Error)</button>
         </div>
     );
 }

@@ -1,4 +1,4 @@
-import { ErrorIcon, SuccessIcon, WarningIcon } from '../components/icons';
+import { ErrorIcon, SuccessIcon, WarningIcon, LoadingIcon } from '../components/icons';
 import { ToastType } from '../types';
 
 export function getToastIcon(type: ToastType) {
@@ -9,6 +9,8 @@ export function getToastIcon(type: ToastType) {
             return <ErrorIcon />;
         case 'warning':
             return <WarningIcon />;
+        case 'loading':
+            return <LoadingIcon />;
 
         default:
             return null;

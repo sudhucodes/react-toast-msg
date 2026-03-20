@@ -1,7 +1,7 @@
-export type ToastType = 'success' | 'error' | 'warning' | 'default';
+export type ToastType = 'success' | 'error' | 'warning' | 'default' | 'loading';
 
 export interface ToastItem {
-    id: number;
+    id: string | number;
     message: string;
     type: ToastType;
     leaving: boolean;
@@ -9,13 +9,14 @@ export interface ToastItem {
 }
 
 export type ToastOptions = {
+    id?: string | number;
     type?: ToastType;
     duration?: number;
     closeButton?: boolean;
 };
 
 export interface ToastProps {
-    id: number;
+    id: string | number;
     message: string;
     type?: ToastType;
     icon?: React.ReactNode;
@@ -33,7 +34,7 @@ export type ShowToastFn = (
     message: string,
     type?: ToastType,
     duration?: number
-) => void;
+) => string | number;
 
 export interface IconProps {
     className?: string;
