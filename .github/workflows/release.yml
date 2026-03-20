@@ -7,6 +7,9 @@ on:
         paths:
             - package.json
 
+permissions:
+    contents: write
+
 jobs:
     release:
         runs-on: ubuntu-latest
@@ -45,4 +48,4 @@ jobs:
                   name: v${{ steps.curr.outputs.version }}
                   generate_release_notes: true
               env:
-                  GITHUB_TOKEN: ${{ secrets.RTM_PUBLIC_REPO_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
