@@ -36,22 +36,21 @@ export default function Example() {
 }
 ```
 
-## Loading States (Manual)
+## Promise Handling
 
-While the library doesn't have a built-in promise handler yet, you can easily simulate it:
+Instead of managing states manually, you can use `toast.promise` to handle loading, success, and error outcomes with a single call.
 
 ```tsx copyable
-const handlePromise = async () => {
-    // Show a default info toast
-    toast("Processing...");
-  
-    const result = await myPromise();
-  
-    if (result.success) {
-        toast.success("Completed!");
-    } else {
-        toast.error("Error occurred.");
-    }
+import { toast } from "react-toast-msg";
+
+const handlePromise = () => {
+    const myPromise = new Promise((resolve) => setTimeout(() => resolve("Success!"), 2000));
+
+    toast.promise(myPromise, {
+        loading: "Processing...",
+        success: (res) => res,
+        error: "Error occurred.",
+    });
 };
 ```
 
