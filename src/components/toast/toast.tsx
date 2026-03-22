@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { ToastProps } from '../types';
-import { cn } from '../utilities/cn';
+import { ToastProps } from '../../types';
+import { cn } from '../../utilities/cn';
 
 export function Toast({
     message,

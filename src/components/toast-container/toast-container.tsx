@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Toast } from './toast';
-import { getToastIcon } from '../utilities/get-icon';
+import { Toast } from '../toast';
+import { getToastIcon } from '../../utilities/get-icon';
 import {
     ToastContainerProps,
     ToastItem,
     ToastOptions,
     ToastType
-} from '../types';
-import { cn } from '../utilities/cn';
+} from '../../types';
+import { cn } from '../../utilities/cn';
 
 let showToastFn: ((message: string, options?: ToastOptions) => string | number) | null =
     null;
