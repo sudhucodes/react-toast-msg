@@ -1,4 +1,4 @@
-import { ErrorIcon, SuccessIcon, WarningIcon, LoadingIcon } from '../components/icons';
+import { ErrorIcon, SuccessIcon, WarningIcon, LoadingIcon } from '../components';
 import { ToastType } from '../types';
 
 export function getToastIcon(type: ToastType) {

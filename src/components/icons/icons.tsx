@@ -1,5 +1,5 @@
-import { IconProps } from '../types';
-import { cn } from '../utilities/cn';
+import { IconProps } from '../../types';
+import { cn } from '../../utilities/cn';
 
 export const SuccessIcon = ({ className }: IconProps) => (
     <svg
