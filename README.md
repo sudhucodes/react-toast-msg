@@ -2,7 +2,7 @@
 
 # React Toast MSG
 
-A lightweight, customizable, and high-performance React toast notification library with zero-config and fast setup.
+Fast, flexible, developer-friendly React toast notifications with a clean black & white design.
 
 ![Version](https://img.shields.io/npm/v/react-toast-msg)
 ![License](https://img.shields.io/npm/l/react-toast-msg)
