@@ -18,6 +18,8 @@ Fast, flexible, developer-friendly React toast notifications with a clean black 
 
 ## Installation
 
+> Before installing, make sure you have Tailwind CSS installed in your project.
+
 ```bash
 npm install react-toast-msg
 # or

@@ -11,6 +11,7 @@ export default defineConfig([
         clean: true,
         minify: true,
         external: ["react", "react-dom"],
+        noExternal: ["framer-motion"],
         banner: {
             js: `"use client";`
         },
