@@ -8,7 +8,6 @@ export function Toast({
     message,
     type = 'default',
     icon,
-    leaving,
     setToasts,
     id,
     closeButton

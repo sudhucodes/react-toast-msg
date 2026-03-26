@@ -4,7 +4,6 @@ export interface ToastItem {
     id: string | number;
     message: string;
     type: ToastType;
-    leaving: boolean;
     closeButton?: boolean;
 }
 

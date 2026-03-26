@@ -39,7 +39,6 @@ export function ToastContainer({
                             ...t,
                             message,
                             type,
-                            leaving: false,
                             closeButton: toastCloseButton ?? closeButton
                         } : t
                     );
@@ -50,7 +49,6 @@ export function ToastContainer({
                         id,
                         message,
                         type,
-                        leaving: false,
                         closeButton: toastCloseButton ?? closeButton
                     }
                 ];
@@ -58,13 +56,7 @@ export function ToastContainer({
 
             if (type !== 'loading') {
                 setTimeout(() => {
-                    setToasts(prev =>
-                        prev.map(t => (t.id === id ? { ...t, leaving: true } : t))
-                    );
-
-                    setTimeout(() => {
-                        setToasts(prev => prev.filter(t => t.id !== id));
-                    }, 300);
+                    setToasts(prev => prev.filter(t => t.id !== id));
                 }, closeTime);
             }
             return id;
@@ -86,7 +78,6 @@ export function ToastContainer({
                         setToasts={setToasts}
                         type={t.type}
                         icon={getToastIcon(t.type)}
-                        leaving={t.leaving}
                         closeButton={t.closeButton}
                     />
                 ))}
