@@ -19,7 +19,6 @@ export interface ToastProps {
     message: string;
     type?: ToastType;
     icon?: React.ReactNode;
-    leaving?: boolean;
     setToasts?: React.Dispatch<React.SetStateAction<ToastItem[]>>;
     closeButton?: boolean;
 }

@@ -38,6 +38,25 @@ export default function Page() {
         }, 3000);
     };
 
+    const fakeApiCall = () => {
+        return new Promise<string>((resolve, reject) => {
+            setTimeout(() => {
+                const success = Math.random() > 0.3;
+
+                success
+                    ? resolve('Data loaded successfully!')
+                    : reject('Something failed!');
+            }, 2000);
+        });
+    };
+
+    const showPromiseToast = () => {
+        toast.promise(fakeApiCall(), {
+            loading: 'Fetching data...',
+            success: 'Data loaded successfully!',
+            error: 'Something went wrong!',
+        });
+    };
     return (
         <>
             <ToastContainer {...ToastContainerConfig} />
@@ -137,6 +156,12 @@ export default function Page() {
                         className="rounded-md border border-gray-200 bg-gray-50 px-5 py-2 text-sm hover:bg-gray-200/80 active:scale-95 transition-all duration-300 font-medium text-gray-600"
                     >
                         Default
+                    </button>
+                    <button
+                        onClick={showPromiseToast}
+                        className="rounded-md border border-gray-200 bg-gray-50 px-5 py-2 text-sm hover:bg-gray-200/80 active:scale-95 transition-all duration-300 font-medium text-gray-600"
+                    >
+                        Promise (Loader)
                     </button>
                 </div>
                 <div className="mt-10 flex items-center gap-3 rounded-md bg-gray-100 px-4 py-3 font-mono">
