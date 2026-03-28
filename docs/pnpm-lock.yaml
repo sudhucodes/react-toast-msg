@@ -27,8 +27,8 @@ importers:
         specifier: 19.2.0
         version: 19.2.0(react@19.2.0)
       react-toast-msg:
-        specifier: ^2.6.0
-        version: 2.6.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        specifier: ^2.7.0
+        version: 2.7.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       tailwind-merge:
         specifier: ^3.4.1
         version: 3.4.1
@@ -1249,6 +1249,20 @@ packages:
     peerDependencies:
       react: '>=17'
 
+  framer-motion@12.38.0:
+    resolution: {integrity: sha512-rFYkY/pigbcswl1XQSb7q424kSTQ8q6eAC+YUsSKooHQYuLdzdHjrt6uxUC+PRAO++q5IS7+TamgIw1AphxR+g==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+
   function-bind@1.1.2:
     resolution: {integrity: sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==}
 
@@ -1860,6 +1874,12 @@ packages:
   minimist@1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
 
+  motion-dom@12.38.0:
+    resolution: {integrity: sha512-pdkHLD8QYRp8VfiNLb8xIBJis1byQ9gPT3Jnh2jqfFtAsWUA3dEepDlsWe/xMpO8McV+VdpKVcp+E+TGJEtOoA==}
+
+  motion-utils@12.36.0:
+    resolution: {integrity: sha512-eHWisygbiwVvf6PZ1vhaHCLamvkSbPIeAYxWUuL3a2PD/TROgE7FvfHWTIH4vMl798QLfMw15nRqIaRDXTlYRg==}
+
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
@@ -2029,8 +2049,8 @@ packages:
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
-  react-toast-msg@2.6.0:
-    resolution: {integrity: sha512-SG7ZLUjIgpFSn7u1W6ZFRhywvT0MxmGuokOCNXYWUPUyRLOsBQYJJpYuZDgQK5KKvUQ7Zq37M+t5ay6c7PYHlA==}
+  react-toast-msg@2.7.0:
+    resolution: {integrity: sha512-yfeebMj1IW44SzIgH8oZ3TJNhZls6c/CgXJA/V/6dnHj0/rBnj0HWSYFtGgczy8u+BGHNsznZWsu6H9PNWEIiQ==}
     peerDependencies:
       react: ^18 || ^19
       react-dom: ^18 || ^19
@@ -3362,12 +3382,13 @@ snapshots:
       prism-react-renderer: 2.4.1(react@19.2.0)
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
-      react-toast-msg: 2.6.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      react-toast-msg: 2.7.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       remark-gfm: 4.0.1
       tailwind-merge: 3.4.1
       unist-util-visit: 5.1.0
     transitivePeerDependencies:
       - '@babel/core'
+      - '@emotion/is-prop-valid'
       - '@opentelemetry/api'
       - '@playwright/test'
       - '@types/react'
@@ -3817,6 +3838,15 @@ snapshots:
   formsync@0.1.2(react@19.2.0):
     dependencies:
       react: 19.2.0
+
+  framer-motion@12.38.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+    dependencies:
+      motion-dom: 12.38.0
+      motion-utils: 12.36.0
+      tslib: 2.8.1
+    optionalDependencies:
+      react: 19.2.0
+      react-dom: 19.2.0(react@19.2.0)
 
   function-bind@1.1.2: {}
 
@@ -4705,6 +4735,12 @@ snapshots:
 
   minimist@1.2.8: {}
 
+  motion-dom@12.38.0:
+    dependencies:
+      motion-utils: 12.36.0
+
+  motion-utils@12.36.0: {}
+
   ms@2.1.3: {}
 
   nanoid@3.3.11: {}
@@ -4888,12 +4924,15 @@ snapshots:
 
   react-is@16.13.1: {}
 
-  react-toast-msg@2.6.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+  react-toast-msg@2.7.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
     dependencies:
       clsx: 2.1.1
+      framer-motion: 12.38.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
       tailwind-merge: 3.4.1
+    transitivePeerDependencies:
+      - '@emotion/is-prop-valid'
 
   react@19.2.0: {}
 
