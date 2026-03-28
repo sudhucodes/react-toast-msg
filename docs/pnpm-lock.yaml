@@ -27,8 +27,8 @@ importers:
         specifier: 19.2.0
         version: 19.2.0(react@19.2.0)
       react-toast-msg:
-        specifier: ^2.5.5
-        version: 2.5.5(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        specifier: ^2.6.0
+        version: 2.6.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       tailwind-merge:
         specifier: ^3.4.1
         version: 3.4.1
@@ -2029,8 +2029,8 @@ packages:
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
-  react-toast-msg@2.5.5:
-    resolution: {integrity: sha512-gmR5+h4UX/OsAq47KpLepHECM4c24Fyq/EWMgBinAj76DTMGnkRIkZo9gUIC2SXcqD8a3/Gllb+isfys1cStdg==}
+  react-toast-msg@2.6.0:
+    resolution: {integrity: sha512-SG7ZLUjIgpFSn7u1W6ZFRhywvT0MxmGuokOCNXYWUPUyRLOsBQYJJpYuZDgQK5KKvUQ7Zq37M+t5ay6c7PYHlA==}
     peerDependencies:
       react: ^18 || ^19
       react-dom: ^18 || ^19
@@ -3362,7 +3362,7 @@ snapshots:
       prism-react-renderer: 2.4.1(react@19.2.0)
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
-      react-toast-msg: 2.5.5(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      react-toast-msg: 2.6.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       remark-gfm: 4.0.1
       tailwind-merge: 3.4.1
       unist-util-visit: 5.1.0
@@ -4888,7 +4888,7 @@ snapshots:
 
   react-is@16.13.1: {}
 
-  react-toast-msg@2.5.5(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+  react-toast-msg@2.6.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
     dependencies:
       clsx: 2.1.1
       react: 19.2.0

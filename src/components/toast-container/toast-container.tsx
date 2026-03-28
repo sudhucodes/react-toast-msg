@@ -8,6 +8,7 @@ import {
     ToastType
 } from '../../types';
 import { cn } from '../../utilities/cn';
+import { AnimatePresence } from 'framer-motion';
 
 let showToastFn: ((message: string, options?: ToastOptions) => string | number) | null =
     null;
@@ -33,16 +34,13 @@ export function ToastContainer({
             setToasts(prev => {
                 const existing = prev.find(t => t.id === id);
                 if (existing) {
-                    return prev.map(t =>
-                        t.id === id
-                            ? {
-                                  ...t,
-                                  message,
-                                  type,
-                                  leaving: false,
-                                  closeButton: toastCloseButton ?? closeButton
-                              }
-                            : t
+                    return prev.map((t: ToastItem) =>
+                        t.id === id ? {
+                            ...t,
+                            message,
+                            type,
+                            closeButton: toastCloseButton ?? closeButton
+                        } : t
                     );
                 }
                 return [
@@ -51,7 +49,6 @@ export function ToastContainer({
                         id,
                         message,
                         type,
-                        leaving: false,
                         closeButton: toastCloseButton ?? closeButton
                     }
                 ];
@@ -59,16 +56,9 @@ export function ToastContainer({
 
             if (type !== 'loading') {
                 setTimeout(() => {
-                    setToasts(prev =>
-                        prev.map(t => (t.id === id ? { ...t, leaving: true } : t))
-                    );
-
-                    setTimeout(() => {
-                        setToasts(prev => prev.filter(t => t.id !== id));
-                    }, 300);
+                    setToasts(prev => prev.filter(t => t.id !== id));
                 }, closeTime);
             }
-            
             return id;
         };
     }, [autoClose, closeButton]);
@@ -79,18 +69,19 @@ export function ToastContainer({
                 'pointer-events-none fixed inset-0 z-9999 flex flex-col items-end justify-end gap-2 p-4 text-sm'
             )}
         >
-            {toasts.map(t => (
-                <Toast
-                    key={t.id}
-                    id={t.id}
-                    message={t.message}
-                    setToasts={setToasts}
-                    type={t.type}
-                    icon={getToastIcon(t.type)}
-                    leaving={t.leaving}
-                    closeButton={t.closeButton}
-                />
-            ))}
+            <AnimatePresence initial={false}>
+                {toasts.map(t => (
+                    <Toast
+                        key={t.id}
+                        id={t.id}
+                        message={t.message}
+                        setToasts={setToasts}
+                        type={t.type}
+                        icon={getToastIcon(t.type)}
+                        closeButton={t.closeButton}
+                    />
+                ))}
+            </AnimatePresence>
         </div>
     );
 }

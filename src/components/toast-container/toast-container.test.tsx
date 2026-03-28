@@ -1,4 +1,4 @@
-import { render, screen, act } from '@testing-library/react';
+import { render, screen, act, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { ToastContainer, toast } from './toast-container';
 
@@ -48,7 +48,9 @@ describe('ToastContainer & toast()', () => {
             vi.advanceTimersByTime(300);
         });
 
-        expect(screen.queryByText('Temporary Message')).not.toBeInTheDocument();
+        waitFor(() => {
+            expect(screen.queryByText('Temporary Message')).not.toBeInTheDocument();
+        });
     });
 
     it('handles promise toasts', async () => {

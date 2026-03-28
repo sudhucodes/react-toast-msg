@@ -4,7 +4,6 @@ export interface ToastItem {
     id: string | number;
     message: string;
     type: ToastType;
-    leaving: boolean;
     closeButton?: boolean;
 }
 
@@ -20,7 +19,6 @@ export interface ToastProps {
     message: string;
     type?: ToastType;
     icon?: React.ReactNode;
-    leaving?: boolean;
     setToasts?: React.Dispatch<React.SetStateAction<ToastItem[]>>;
     closeButton?: boolean;
 }

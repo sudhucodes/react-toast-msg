@@ -2,7 +2,7 @@
 
 # React Toast MSG
 
-A lightweight, customizable, and high-performance React toast notification library with zero-config and fast setup.
+Fast, flexible, developer-friendly React toast notifications with a clean black & white design.
 
 ![Version](https://img.shields.io/npm/v/react-toast-msg)
 ![License](https://img.shields.io/npm/l/react-toast-msg)
@@ -10,13 +10,15 @@ A lightweight, customizable, and high-performance React toast notification libra
 
 ## ✨ Features
 
-- **🚀 Zero Config**: Works out of the box with sensible defaults.
-- **🎨 Tailwind Driven**: Styled with Tailwind CSS for modern aesthetics.
-- **⚡ Performance**: Built with tsup for high performance and small bundle size.
-- **🔧 Customizable**: Easily customize duration, type, and icons.
-- **🧩 Promise Support**: First-class support for `toast.promise`.
+- **Zero Config**: Works out of the box with sensible defaults.
+- **Tailwind Driven**: Styled with Tailwind CSS for modern aesthetics.
+- **Performance**: Built with tsup for high performance and small bundle size.
+- **Customizable**: Easily customize duration, type, and icons.
+- **Promise Support**: First-class support for `toast.promise`.
 
-## 📦 Installation
+## Installation
+
+> Before installing, make sure you have Tailwind CSS installed in your project.
 
 ```bash
 npm install react-toast-msg
@@ -26,7 +28,7 @@ pnpm add react-toast-msg
 yarn add react-toast-msg
 ```
 
-## 🛠️ Usage
+## Usage
 
 1. **Add the ToastContainer** to the root of your application:
 
@@ -35,12 +37,12 @@ import { ToastContainer } from 'react-toast-msg';
 import 'react-toast-msg/style.css';
 
 function App() {
-  return (
-    <>
-      <YourApp />
-      <ToastContainer />
-    </>
-  );
+    return (
+        <>
+            <YourApp />
+            <ToastContainer />
+        </>
+    );
 }
 ```
 
@@ -60,20 +62,20 @@ toast.loading('Saving results...');
 
 // Promise toast
 toast.promise(saveData(), {
-  loading: 'Saving...',
-  success: 'Saved successfully!',
-  error: 'Failed to save.'
+    loading: 'Saving...',
+    success: 'Saved successfully!',
+    error: 'Failed to save.'
 });
 ```
 
-## 📄 Documentation
+## Documentation
 
-Learn more and explore examples at [rtm.sudhucodes.com](https://rtm.sudhucodes.com/docs).
+Learn more and explore examples at [rtm.sudhucodes.com](https://rtm.sudhucodes.com/docs?ref=github).
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for more details.
 
-## 📜 License
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).
