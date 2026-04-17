@@ -12,6 +12,7 @@ export type ToastOptions = {
     type?: ToastType;
     duration?: number;
     closeButton?: boolean;
+    autoClose?: boolean | number;
 };
 
 export interface ToastProps {
@@ -24,7 +25,7 @@ export interface ToastProps {
 }
 
 export interface ToastContainerProps {
-    autoClose?: number;
+    autoClose?: boolean | number;
     closeButton?: boolean;
 }
 
