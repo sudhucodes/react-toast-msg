@@ -25,11 +25,15 @@ export function ToastContainer({
                 type = 'default',
                 duration,
                 closeButton: toastCloseButton,
+                autoClose: toastAutoClose,
                 id: customId
             } = options;
 
             const id = customId ?? Date.now();
-            const closeTime = duration || autoClose;
+            
+            const resolvedAutoClose = toastAutoClose !== undefined ? toastAutoClose : autoClose;
+            const isAutoCloseDisabled = resolvedAutoClose === false;
+            const finalCloseButton = isAutoCloseDisabled ? true : (toastCloseButton ?? closeButton);
 
             setToasts(prev => {
                 const existing = prev.find(t => t.id === id);
@@ -39,7 +43,7 @@ export function ToastContainer({
                             ...t,
                             message,
                             type,
-                            closeButton: toastCloseButton ?? closeButton
+                            closeButton: finalCloseButton
                         } : t
                     );
                 }
@@ -49,12 +53,13 @@ export function ToastContainer({
                         id,
                         message,
                         type,
-                        closeButton: toastCloseButton ?? closeButton
+                        closeButton: finalCloseButton
                     }
                 ];
             });
 
-            if (type !== 'loading') {
+            if (type !== 'loading' && !isAutoCloseDisabled) {
+                const closeTime = duration || (typeof resolvedAutoClose === 'number' ? resolvedAutoClose : 3000);
                 setTimeout(() => {
                     setToasts(prev => prev.filter(t => t.id !== id));
                 }, closeTime);

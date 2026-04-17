@@ -16,6 +16,15 @@ import { toast } from "react-toast-msg";
 toast.success("Long message", { duration: 10000 });
 ```
 
+## Disable Auto Close
+
+If you have an important message that requires the user's explicit attention, you can prevent the toast from closing automatically by passing `autoClose: false`. This will automatically force the close button to show, ensuring the user can still dismiss it.
+
+```tsx copyable
+// This toast requires the user to click the close button
+toast.error("Critical server error!", { autoClose: false }); 
+```
+
 ## Manual Close Button
 
 You can enable or disable the close button globally in `ToastContainer` or per-toast via the `toast` methods.
@@ -35,7 +44,7 @@ The `ToastContainer` accepts props that apply to all toasts.
 <ToastContainer autoClose={5000} closeButton={true} />
 ```
 
-- `autoClose`: Default duration for all toasts in milliseconds.
+- `autoClose`: Default duration for all toasts in milliseconds. Pass `false` to disable auto-closing globally.
 - `closeButton`: Whether to show a close button by default.
 
 ## Promises
