@@ -70,6 +70,15 @@ export default function App() {
                     >
                         Promise Error
                     </button>
+
+                    <button
+                        onClick={() => toast.error("Critical server error! Please review.", {
+                            autoClose: false
+                        })}
+                        className={btn}
+                    >
+                        Auto Close False
+                    </button>
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 {
     "name": "react-toast-msg",
-    "version": "2.7.0",
+    "version": "2.7.1",
     "description": "Fast, flexible, developer-friendly React toast notifications with a clean black & white design.",
     "files": [
         "dist"
@@ -10,7 +10,7 @@
         "prettier": "prettier --write src",
         "build": "pnpm build:ts && pnpm build:css",
         "build:ts": "tsup",
-        "build:css": "cp ./src/style.css ./dist/style.css",
+        "build:css": "shx cp ./src/style.css ./dist/style.css",
         "test": "vitest"
     },
     "main": "dist/index.js",
@@ -55,6 +55,7 @@
         "@testing-library/react": "^16.3.2",
         "@types/react": "^19.2.2",
         "@types/react-dom": "^19.2.2",
+        "shx": "^0.4.0",
         "@vitejs/plugin-react": "^4.3.4",
         "jsdom": "^29.0.1",
         "prettier": "^3.6.2",
