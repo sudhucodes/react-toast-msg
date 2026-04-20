@@ -1,7 +1,7 @@
-import { defaultMdxComponents } from "docstra/server";
+import { defaultMdxComponents } from "docstra/mdx";
 import { DocstraCodeBlock } from "docstra";
 
-export function useMDXComponents() {
+export function getMDXComponents() {
     return {
         ...defaultMdxComponents,
         code: DocstraCodeBlock,

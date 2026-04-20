@@ -1,0 +1,60 @@
+---
+title: 'Toast API'
+description: 'Reference for the toast function and its methods.'
+---
+
+The `toast` object provides several methods to trigger notifications with different styles.
+
+## toast(message, type, duration)
+
+The main function for showing a toast.
+
+| Parameter | Type      | Default   | Description                   |
+| :-------- | :-------- | :-------- | :---------------------------- |
+| message   | string    | -         | The message to display.       |
+| type      | ToastType | 'default' | The style of the toast.       |
+| duration  | number    | 3000      | Time in ms before auto-close. |
+
+## Methods
+
+### toast.success(message, duration?)
+
+Shorthand for `toast(message, duration)`.
+
+### toast.error(message, duration?)
+
+Shorthand for `toast.error(message, duration)`.
+
+### toast.warning(message, duration?)
+
+Shorthand for `toast.warning(message, duration)`.
+
+### toast.default(message, duration?)
+
+Shorthand for `toast(message, duration)`.
+
+### toast.promise(promise, data, options?)
+
+Displays a loading toast that automatically updates to success or error when the promise resolves or rejects.
+
+| Parameter | Type         | Description                               |
+| :-------- | :----------- | :---------------------------------------- |
+| promise   | Promise      | The promise to track.                     |
+| data      | object       | Content for different states (see below). |
+| options   | ToastOptions | Optional configuration.                   |
+
+#### Data Object
+
+| Field   | Type                       | Description                                        |
+| :------ | :------------------------- | :------------------------------------------------- |
+| loading | string                     | Message to show while the promise is pending.      |
+| success | string \| (data) => string | Message or function generating message on success. |
+| error   | string \| (err) => string  | Message or function generating message on error.   |
+
+## Example
+
+```tsx copy
+import { toast } from 'react-toast-msg';
+
+toast.success('Profile updated', { duration: 2000 });
+```

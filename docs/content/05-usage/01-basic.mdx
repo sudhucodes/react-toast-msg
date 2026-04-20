@@ -1,36 +1,36 @@
 ---
-title: "Basic Usage"
-description: "Learn the basics of triggering toasts."
+title: Basic Usage
+description: Learn the basics of triggering toasts.
 ---
 
-The `toast` function is a versatile tool for showing notifications. 
+The `toast` function is a versatile tool for showing notifications.
 
 ## Simple Notifications
 
 The most common way to show a toast is by using one of the shorthand methods:
 
-```tsx copyable
-import { toast } from "react-toast-msg";
+```tsx copy
+import { toast } from 'react-toast-msg';
 
 // Success toast
-toast.success("Action completed!");
+toast.success('Action completed!');
 
 // Error toast
-toast.error("Something went wrong.");
+toast.error('Something went wrong.');
 
 // Warning toast
-toast.warning("Check your settings.");
+toast.warning('Check your settings.');
 
 // Default/Info toast
-toast("Here is some information.");
+toast('Here is some information.');
 ```
 
 ## Custom Message
 
 You can pass any string as the first argument to these methods.
 
-```tsx copyable
-toast.success("Order #12345 has been shipped!");
+```tsx copy
+toast.success('Order #12345 has been shipped!');
 ```
 
 ## Timing

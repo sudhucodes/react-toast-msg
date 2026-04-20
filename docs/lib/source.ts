@@ -1,4 +1,7 @@
 import { docs } from "@/.docstra/index";
-import { createSource } from "docstra/server";
+import { createSource } from "docstra/mdx";
 
-export const source = createSource(docs);
+export const source = createSource({
+    source: docs,
+    baseUrl: "/docs"
+});
