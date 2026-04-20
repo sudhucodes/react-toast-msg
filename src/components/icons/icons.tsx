@@ -6,7 +6,7 @@ export const SuccessIcon = ({ className }: IconProps) => (
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
-        className={cn('size-5.5', className)}
+        className={cn('size-5.5 shrink-0', className)}
         height={24}
         width={24}
     >
@@ -23,7 +23,7 @@ export const ErrorIcon = ({ className }: IconProps) => (
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
-        className={cn('size-5.5', className)}
+        className={cn('size-5.5 shrink-0', className)}
         height={24}
         width={24}
     >
@@ -40,7 +40,7 @@ export const WarningIcon = ({ className }: IconProps) => (
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
-        className={cn('size-5.5', className)}
+        className={cn('size-5.5 shrink-0', className)}
         height={24}
         width={24}
     >
@@ -63,7 +63,7 @@ export const LoadingIcon = ({ className }: IconProps) => (
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className={cn('size-5.5 animate-spin', className)}
+        className={cn('size-5.5 shrink-0 animate-spin', className)}
     >
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M12 6l0 -3" />

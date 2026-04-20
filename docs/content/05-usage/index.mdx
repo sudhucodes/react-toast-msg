@@ -1,0 +1,33 @@
+---
+title: Usage
+description: How to use react-toast-msg in your project.
+---
+
+## Quick Start
+
+1. Add `ToastContainer` to your application:
+
+```tsx copy
+import { ToastContainer } from 'react-toast-msg';
+
+function App() {
+    return (
+        <>
+            {children}
+            <ToastContainer />
+        </>
+    );
+}
+```
+
+2. Use the `toast` function to show notifications:
+
+```tsx copy
+import { toast } from 'react-toast-msg';
+
+toast.success('Profile updated');
+```
+
+## Advanced Usage
+
+For more usage examples, check out the [Basic Usage](/docs/usage/basic) and [Advanced Usage](/docs/usage/advanced) pages.

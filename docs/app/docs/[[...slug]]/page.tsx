@@ -1,45 +1,41 @@
-import docstraConfig from "@/docstra.config";
-import { useMDXComponents } from "@/mdx-components";
-import {
-    DocstraBody,
-    DocstraHeader,
-    DocstraPage,
-    DocstraProvider,
-} from "docstra";
+import docstraConfig from '@/docstra.config';
+import { DocstraBody, DocstraProvider } from 'docstra';
 
-import { source } from "@/lib/source";
-import { notFound } from "next/navigation";
+import { source } from '@/lib/source';
+import { notFound } from 'next/navigation';
+import { getMDXComponents } from '@/mdx-components';
 
 export default async function Page({ params }: { params: Promise<{ slug?: string[] }> }) {
-    const { slug } = await params
+    const { slug } = await params;
+
     const page = source.getPage(slug);
+
     if (!page) return notFound();
 
-    const MDX = page.body;
+    const MDX = source.getPageMdx(slug);
 
     return (
-        <DocstraProvider docstraConfig={docstraConfig} docs={source.files} pageData={page.info}>
-            <DocstraHeader />
-            <DocstraPage>
-                <DocstraBody>
-                    <MDX components={useMDXComponents()} />
-                </DocstraBody>
-            </DocstraPage>
+        <DocstraProvider docstraConfig={docstraConfig} page={page}>
+            <DocstraBody>
+                <MDX components={getMDXComponents()} />
+            </DocstraBody>
         </DocstraProvider>
     );
 }
+
+export const dynamic = "force-static";
 
 export function generateStaticParams() {
     return source.generateStaticParams();
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug?: string[] }> }) {
-    const { slug } = await params
+    const { slug } = await params;
     const page = source.getPage(slug);
     if (!page) return notFound();
 
     return {
-        title: page.info.data.metadata.title,
-        description: page.info.data.metadata.description,
-    }
+        title: page.metadata.title,
+        description: page.metadata.description
+    };
 }

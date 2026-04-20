@@ -1,12 +1,12 @@
 {
     "name": "react-toast-msg",
-    "version": "2.7.1",
+    "version": "2.7.2",
     "description": "Fast, flexible, developer-friendly React toast notifications with a clean black & white design.",
     "files": [
         "dist"
     ],
     "scripts": {
-        "dev": "tsup --watch ./src",
+        "dev": "pnpm build:css && tsup --watch ./src --clean false",
         "prettier": "prettier --write src",
         "build": "pnpm build:ts && pnpm build:css",
         "build:ts": "tsup",

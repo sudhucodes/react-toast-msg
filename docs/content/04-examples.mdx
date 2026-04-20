@@ -1,0 +1,57 @@
+---
+title: Examples
+description: Common patterns and examples for using react-toast-msg.
+icon: LayoutTemplateIcon
+---
+
+Here are some common usage patterns for `react-toast-msg`.
+
+## Form Submission
+
+Show a success or error toast based on form submission results.
+
+```tsx copy
+import { FormSyncForm } from 'formsync';
+import { toast } from 'react-toast-msg';
+
+export default function Example() {
+    return (
+        <main>
+            <FormSyncForm
+                formId="YOUR_FORM_ID"
+                onSuccess={res => toast.success(res.message)}
+                onSubmitError={err => toast.error(err.message)}
+            >
+                <input type="text" name="name" placeholder="Name" required />
+                <button type="submit">Submit</button>
+            </FormSyncForm>
+        </main>
+    );
+}
+```
+
+## Promise Handling
+
+Instead of managing states manually, you can use `toast.promise` to handle loading, success, and error outcomes with a single call.
+
+```tsx copy
+import { toast } from 'react-toast-msg';
+
+const handlePromise = () => {
+    const myPromise = new Promise(resolve =>
+        setTimeout(() => resolve('Success!'), 2000)
+    );
+
+    toast.promise(myPromise, {
+        loading: 'Processing...',
+        success: res => res,
+        error: 'Error occurred.'
+    });
+};
+```
+
+## Custom Layouts
+
+Since `react-toast-msg` is lightweight, you can use it alongside other UI components easily.
+
+> Check out the [Playground](/) for more interactive examples!
