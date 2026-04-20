@@ -1,6 +1,6 @@
 ---
-title: "Advanced Usage"
-description: "Customize your toasts with durations, close buttons, and more."
+title: 'Advanced Usage'
+description: 'Customize your toasts with durations, close buttons, and more.'
 ---
 
 Beyond simple messages, you can customize how your toasts behave and look.
@@ -9,29 +9,29 @@ Beyond simple messages, you can customize how your toasts behave and look.
 
 You can override the default auto-close duration by passing a third argument to the `toast` function (in milliseconds).
 
-```tsx copyable
-import { toast } from "react-toast-msg";
+```tsx copy
+import { toast } from 'react-toast-msg';
 
 // This toast will stay for 10 seconds
-toast.success("Long message", { duration: 10000 });
+toast.success('Long message', { duration: 10000 });
 ```
 
 ## Disable Auto Close
 
 If you have an important message that requires the user's explicit attention, you can prevent the toast from closing automatically by passing `autoClose: false`. This will automatically force the close button to show, ensuring the user can still dismiss it.
 
-```tsx copyable
+```tsx copy
 // This toast requires the user to click the close button
-toast.error("Critical server error!", { autoClose: false }); 
+toast.error('Critical server error!', { autoClose: false });
 ```
 
 ## Manual Close Button
 
 You can enable or disable the close button globally in `ToastContainer` or per-toast via the `toast` methods.
 
-```tsx copyable
+```tsx copy
 // Enabling close button per toast
-toast.error("Critical error!", { duration: 5000, closeButton: true }); 
+toast.error('Critical error!', { duration: 5000, closeButton: true });
 ```
 
 > TIP: Use shorter durations for simple notifications and longer durations for critical errors that require user attention.
@@ -40,7 +40,7 @@ toast.error("Critical error!", { duration: 5000, closeButton: true });
 
 The `ToastContainer` accepts props that apply to all toasts.
 
-```tsx copyable
+```tsx copy
 <ToastContainer autoClose={5000} closeButton={true} />
 ```
 
@@ -51,16 +51,18 @@ The `ToastContainer` accepts props that apply to all toasts.
 
 Handle asynchronous operations seamlessly with `toast.promise`. It manages loading, success, and error states for you.
 
-```tsx copyable
-import { toast } from "react-toast-msg";
+```tsx copy
+import { toast } from 'react-toast-msg';
 
 const fetchData = async () => {
-    const promise = new Promise((resolve) => setTimeout(() => resolve({ name: "User" }), 2000));
-    
+    const promise = new Promise(resolve =>
+        setTimeout(() => resolve({ name: 'User' }), 2000)
+    );
+
     toast.promise(promise, {
-        loading: "Fetching data...",
-        success: (data) => `Hello, ${data.name}!`,
-        error: (err) => `Error: ${err.message}`,
+        loading: 'Fetching data...',
+        success: data => `Hello, ${data.name}!`,
+        error: err => `Error: ${err.message}`
     });
 };
 ```
