@@ -5,7 +5,7 @@ on:
         branches:
             - main
         paths:
-            - package.json
+            - packages/react-toast-msg/package.json
 
 permissions:
     contents: write
@@ -23,13 +23,14 @@ jobs:
             - name: Get previous version
               id: prev
               run: |
-                  git show HEAD^:package.json > prev.json || echo '{}' > prev.json
+                  git show HEAD^:packages/react-toast-msg/package.json > prev.json || echo '{}' > prev.json
                   echo "version=$(jq -r .version prev.json)" >> $GITHUB_OUTPUT
 
             - name: Get current version
               id: curr
               run: |
-                  echo "version=$(jq -r .version package.json)" >> $GITHUB_OUTPUT
+                  echo "version=$(jq -r .version packages/react-toast-msg/package.json)" >> $GITHUB_OUTPUT
+
 
             - name: Check if version changed
               id: check
