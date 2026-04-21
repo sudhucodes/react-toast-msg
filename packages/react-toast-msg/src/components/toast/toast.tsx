@@ -4,6 +4,13 @@ import { motion } from 'framer-motion';
 import { CloseIcon } from '../icons';
 
 
+/**
+ * Individual Toast component that renders a single toast notification.
+ * Handles the display, animation, and close functionality for one toast item.
+ *
+ * @param props - Properties defining the toast's content and behavior
+ * @returns JSX element representing the toast notification
+ */
 export function Toast({
     message,
     type = 'default',
