@@ -2,12 +2,12 @@ import { defineDocstraConfig } from "docstra/mdx";
 
 export default defineDocstraConfig({
     collections: {
-        docs: 'content',
+        docs: '../../content/docs',
     },
     editOnGithub: {
         owner: "sudhucodes",
         repo: "react-toast-msg",
-        path: "docs/content",
+        path: "content/docs",
         branch: "main"
     },
     feedback: {
