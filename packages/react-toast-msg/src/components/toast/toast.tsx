@@ -1,7 +1,7 @@
-import { ToastProps } from '../../types';
-import { cn } from '../../utilities/cn';
+import { ToastProps } from '@/types';
+import { cn } from '@/utilities/cn';
 import { motion } from 'framer-motion';
-import { CloseIcon } from '../icons';
+import { CloseIcon } from '@/components/icons';
 
 
 /**

@@ -1,5 +1,5 @@
-import { ErrorIcon, SuccessIcon, WarningIcon, LoadingIcon } from '../components';
-import { ToastType } from '../types';
+import { ErrorIcon, SuccessIcon, WarningIcon, LoadingIcon } from '@/components';
+import { ToastType } from '@/types';
 
 /**
  * Returns the appropriate icon component for a given toast type.

@@ -1,14 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Toast } from '../toast';
-import { getToastIcon } from '../../utilities/get-icon';
-import {
-    ToastContainerProps,
-    ToastItem,
-    ToastOptions,
-    ToastType
-} from '../../types';
-import { cn } from '../../utilities/cn';
+import { ToastContainerProps, ToastItem, ToastOptions } from '@/types';
 import { AnimatePresence } from 'framer-motion';
+import { cn } from '@/utilities/cn';
+import { getToastIcon } from '@/utilities/get-icon';
+import { Toast } from '@/components/toast';
 
 let showToastFn: ((message: string, options?: ToastOptions) => string | number) | null =
     null;

@@ -1,5 +1,5 @@
-import { IconProps } from '../../types';
-import { cn } from '../../utilities/cn';
+import { IconProps } from '@/types';
+import { cn } from '@/utilities/cn';
 
 /**
  * Success icon component for success toast notifications.
