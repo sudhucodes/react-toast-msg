@@ -1,6 +1,6 @@
 {
     "name": "react-toast-msg",
-    "version": "2.7.2",
+    "version": "2.8.0",
     "description": "Fast, flexible, developer-friendly React toast notifications with a clean black & white design.",
     "files": [
         "dist"
@@ -11,7 +11,7 @@
         "build": "pnpm build:ts && pnpm build:css",
         "build:ts": "tsup",
         "build:css": "shx mkdir -p dist && shx cp ./src/style.css ./dist/style.css",
-        "test": "vitest"
+        "test": "vitest run"
     },
     "main": "dist/index.js",
     "module": "dist/index.mjs",
@@ -49,19 +49,20 @@
         "react-dom": "^18 || ^19"
     },
     "devDependencies": {
+        "@repo/typescript-config": "workspace:*",
         "@tailwindcss/cli": "^4.1.18",
         "@testing-library/dom": "^10.4.1",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^16.3.2",
         "@types/react": "^19.2.2",
         "@types/react-dom": "^19.2.2",
-        "shx": "^0.4.0",
-        "@vitejs/plugin-react": "^4.3.4",
+        "@vitejs/plugin-react": "^6.0.1",
         "jsdom": "^29.0.1",
         "prettier": "^3.6.2",
         "prettier-plugin-tailwindcss": "^0.7.2",
         "react": "^19.2.4",
         "react-dom": "^19.2.4",
+        "shx": "^0.4.0",
         "tailwindcss": "^4.1.18",
         "tsup": "^8.5.0",
         "typescript": "^5.9.3",

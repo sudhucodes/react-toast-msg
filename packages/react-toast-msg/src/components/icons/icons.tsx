@@ -1,6 +1,10 @@
-import { IconProps } from '../../types';
-import { cn } from '../../utilities/cn';
+import { IconProps } from '@/types';
+import { cn } from '@/utilities/cn';
 
+/**
+ * Success icon component for success toast notifications.
+ * Displays a checkmark icon indicating a successful operation.
+ */
 export const SuccessIcon = ({ className }: IconProps) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -18,6 +22,10 @@ export const SuccessIcon = ({ className }: IconProps) => (
     </svg>
 );
 
+/**
+ * Error icon component for error toast notifications.
+ * Displays an exclamation mark in a circle indicating an error occurred.
+ */
 export const ErrorIcon = ({ className }: IconProps) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -35,6 +43,10 @@ export const ErrorIcon = ({ className }: IconProps) => (
     </svg>
 );
 
+/**
+ * Warning icon component for warning toast notifications.
+ * Displays a triangle with an exclamation mark indicating a warning.
+ */
 export const WarningIcon = ({ className }: IconProps) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -52,6 +64,10 @@ export const WarningIcon = ({ className }: IconProps) => (
     </svg>
 );
 
+/**
+ * Loading icon component for loading toast notifications.
+ * Displays an animated spinning icon indicating an ongoing process.
+ */
 export const LoadingIcon = ({ className }: IconProps) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -77,6 +93,10 @@ export const LoadingIcon = ({ className }: IconProps) => (
     </svg>
 );
 
+/**
+ * Close icon component used for the close button on toast notifications.
+ * Displays an X mark for dismissing toasts.
+ */
 export const CloseIcon = ({ className }: IconProps) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"

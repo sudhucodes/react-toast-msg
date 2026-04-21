@@ -1,9 +1,16 @@
-import { ToastProps } from '../../types';
-import { cn } from '../../utilities/cn';
+import { ToastProps } from '@/types';
+import { cn } from '@/utilities/cn';
 import { motion } from 'framer-motion';
-import { CloseIcon } from '../icons';
+import { CloseIcon } from '@/components/icons';
 
 
+/**
+ * Individual Toast component that renders a single toast notification.
+ * Handles the display, animation, and close functionality for one toast item.
+ *
+ * @param props - Properties defining the toast's content and behavior
+ * @returns JSX element representing the toast notification
+ */
 export function Toast({
     message,
     type = 'default',
