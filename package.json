@@ -9,7 +9,7 @@
     "check-types": "turbo run check-types",
     "cs": "changeset",
     "cs:version": "changeset version && pnpm install --no-frozen-lockfile",
-    "cs:publish": "turbo clean --filter=./packages/* && turbo build --filter=./packages/* && changeset publish"
+    "cs:publish": "turbo run build --filter=./packages/* && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.31.0",
