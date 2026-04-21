@@ -1,0 +1,75 @@
+{
+    "name": "react-toast-msg",
+    "version": "2.7.2",
+    "description": "Fast, flexible, developer-friendly React toast notifications with a clean black & white design.",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "dev": "pnpm build:css && tsup --watch ./src --clean false",
+        "prettier": "prettier --write src",
+        "build": "pnpm build:ts && pnpm build:css",
+        "build:ts": "tsup",
+        "build:css": "shx mkdir -p dist && shx cp ./src/style.css ./dist/style.css",
+        "test": "vitest"
+    },
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js"
+        },
+        "./style.css": "./dist/style.css"
+    },
+    "keywords": [
+        "react",
+        "toast",
+        "notification",
+        "react-toast",
+        "react-toastify",
+        "snackbar",
+        "react-toast-msg",
+        "rtm",
+        "toast-component"
+    ],
+    "author": "SudhuCodes",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sudhucodes/react-toast-msg.git"
+    },
+    "bugs": {
+        "url": "https://github.com/sudhucodes/react-toast-msg/issues"
+    },
+    "homepage": "https://rtm.sudhucodes.com",
+    "peerDependencies": {
+        "react": "^18 || ^19",
+        "react-dom": "^18 || ^19"
+    },
+    "devDependencies": {
+        "@tailwindcss/cli": "^4.1.18",
+        "@testing-library/dom": "^10.4.1",
+        "@testing-library/jest-dom": "^6.9.1",
+        "@testing-library/react": "^16.3.2",
+        "@types/react": "^19.2.2",
+        "@types/react-dom": "^19.2.2",
+        "shx": "^0.4.0",
+        "@vitejs/plugin-react": "^4.3.4",
+        "jsdom": "^29.0.1",
+        "prettier": "^3.6.2",
+        "prettier-plugin-tailwindcss": "^0.7.2",
+        "react": "^19.2.4",
+        "react-dom": "^19.2.4",
+        "tailwindcss": "^4.1.18",
+        "tsup": "^8.5.0",
+        "typescript": "^5.9.3",
+        "vitest": "^4.1.0"
+    },
+    "dependencies": {
+        "clsx": "^2.1.1",
+        "framer-motion": "^12.38.0",
+        "tailwind-merge": "^3.4.0"
+    }
+}
