@@ -4,10 +4,6 @@
 
 Fast, flexible, developer-friendly React toast notifications with a clean black & white design.
 
-![Version](https://img.shields.io/npm/v/react-toast-msg)
-![License](https://img.shields.io/npm/l/react-toast-msg)
-![Downloads](https://img.shields.io/npm/dt/react-toast-msg)
-
 ## ✨ Features
 
 - **Zero Config**: Works out of the box with sensible defaults.
@@ -60,6 +56,12 @@ toast.error('An error occurred. Please try again.');
 toast.warning('Check your internet connection.');
 toast.loading('Saving results...');
 
+// Custom duration
+toast('Hello World!', { duration: 5000 });
+
+// Auto close false
+toast('Hello World!', { autoClose: false });
+
 // Promise toast
 toast.promise(saveData(), {
     loading: 'Saving...',
@@ -71,11 +73,3 @@ toast.promise(saveData(), {
 ## Documentation
 
 Learn more and explore examples at [rtm.sudhucodes.com](https://rtm.sudhucodes.com/docs?ref=github).
-
-## Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for more details.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE.md).
