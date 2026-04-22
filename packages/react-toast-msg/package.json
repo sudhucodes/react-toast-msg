@@ -1,6 +1,6 @@
 {
     "name": "react-toast-msg",
-    "version": "2.8.1",
+    "version": "2.9.0",
     "description": "Fast, flexible, developer-friendly React toast notifications with a clean black & white design.",
     "files": [
         "dist"

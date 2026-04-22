@@ -1,5 +1,16 @@
 # test-app
 
+## 0.1.0
+
+### Minor Changes
+
+- a54010e: feat: add pause on hover functionality for auto-closing toasts and update documentation
+
+### Patch Changes
+
+- Updated dependencies [a54010e]
+    - react-toast-msg@2.9.0
+
 ## 0.0.2
 
 ### Patch Changes
