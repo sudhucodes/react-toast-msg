@@ -4,6 +4,10 @@ import { AnimatePresence } from 'framer-motion';
 import { cn } from '@/utilities/cn';
 import { getToastIcon } from '@/utilities/get-icon';
 import { Toast } from '@/components/toast';
+import {
+    DEFAULT_PAUSE_ON_HOVER,
+    DEFAULT_TOAST_DURATION
+} from '@/constants/toast-defaults';
 
 let showToastFn: ((message: string, options?: ToastOptions) => string | number) | null =
     null;
@@ -17,8 +21,9 @@ let showToastFn: ((message: string, options?: ToastOptions) => string | number) 
  * @returns JSX element containing the toast container
  */
 export function ToastContainer({
-    autoClose = 3000,
-    closeButton = false
+    autoClose = DEFAULT_TOAST_DURATION,
+    closeButton = false,
+    pauseOnHover = DEFAULT_PAUSE_ON_HOVER
 }: ToastContainerProps) {
     const [toasts, setToasts] = useState<ToastItem[]>([]);
 
@@ -29,14 +34,26 @@ export function ToastContainer({
                 duration,
                 closeButton: toastCloseButton,
                 autoClose: toastAutoClose,
+                pauseOnHover: toastPauseOnHover,
                 id: customId
             } = options;
 
             const id = customId ?? Date.now();
 
             const resolvedAutoClose = toastAutoClose !== undefined ? toastAutoClose : autoClose;
-            const isAutoCloseDisabled = resolvedAutoClose === false;
-            const finalCloseButton = isAutoCloseDisabled ? true : (toastCloseButton ?? closeButton);
+            const autoCloseDuration = type === 'loading'
+                ? false
+                : duration !== undefined
+                    ? (duration > 0 && Number.isFinite(duration) ? duration : false)
+                    : resolvedAutoClose === false
+                        ? false
+                        : typeof resolvedAutoClose === 'number' && resolvedAutoClose > 0
+                            ? resolvedAutoClose
+                            : DEFAULT_TOAST_DURATION;
+            const finalCloseButton = autoCloseDuration === false
+                ? true
+                : (toastCloseButton ?? closeButton);
+            const finalPauseOnHover = toastPauseOnHover ?? pauseOnHover;
 
             setToasts(prev => {
                 const existing = prev.find(t => t.id === id);
@@ -46,7 +63,9 @@ export function ToastContainer({
                             ...t,
                             message,
                             type,
-                            closeButton: finalCloseButton
+                            closeButton: finalCloseButton,
+                            autoCloseDuration,
+                            pauseOnHover: finalPauseOnHover
                         } : t
                     );
                 }
@@ -56,20 +75,20 @@ export function ToastContainer({
                         id,
                         message,
                         type,
-                        closeButton: finalCloseButton
+                        closeButton: finalCloseButton,
+                        autoCloseDuration,
+                        pauseOnHover: finalPauseOnHover
                     }
                 ];
             });
 
-            if (type !== 'loading' && !isAutoCloseDisabled) {
-                const closeTime = duration || (typeof resolvedAutoClose === 'number' ? resolvedAutoClose : 3000);
-                setTimeout(() => {
-                    setToasts(prev => prev.filter(t => t.id !== id));
-                }, closeTime);
-            }
             return id;
         };
-    }, [autoClose, closeButton]);
+
+        return () => {
+            showToastFn = null;
+        };
+    }, [autoClose, closeButton, pauseOnHover]);
 
     return (
         <div
@@ -87,6 +106,8 @@ export function ToastContainer({
                         type={t.type}
                         icon={getToastIcon(t.type)}
                         closeButton={t.closeButton}
+                        autoCloseDuration={t.autoCloseDuration}
+                        pauseOnHover={t.pauseOnHover}
                     />
                 ))}
             </AnimatePresence>

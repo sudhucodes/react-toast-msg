@@ -1,4 +1,4 @@
-import { render, screen, act } from '@testing-library/react';
+import { render, screen, act, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import { Toast } from './toast';
 
@@ -27,8 +27,7 @@ describe('Toast Component', () => {
         expect(screen.getByRole('button')).toBeInTheDocument();
     });
 
-    it('calls setToasts when close button is clicked', async () => {
-        vi.useFakeTimers();
+    it('calls setToasts when close button is clicked', () => {
         const setToasts = vi.fn();
         render(
             <Toast 
@@ -44,9 +43,38 @@ describe('Toast Component', () => {
             closeButton.click();
         });
 
+        expect(setToasts).toHaveBeenCalled();
+    });
+
+    it('pauses auto close while hovered and resumes on leave', () => {
+        vi.useFakeTimers();
+        const setToasts = vi.fn();
+
+        render(
+            <Toast
+                id={1}
+                message="Hover me"
+                autoCloseDuration={1000}
+                pauseOnHover={true}
+                setToasts={setToasts}
+            />
+        );
+
+        const toast = screen.getByText('Hover me');
+
         act(() => {
-            vi.advanceTimersByTime(300);
+            vi.advanceTimersByTime(400);
+            fireEvent.mouseEnter(toast);
+            vi.advanceTimersByTime(1000);
         });
+
+        expect(setToasts).not.toHaveBeenCalled();
+
+        act(() => {
+            fireEvent.mouseLeave(toast);
+            vi.advanceTimersByTime(600);
+        });
+
         expect(setToasts).toHaveBeenCalled();
         vi.useRealTimers();
     });

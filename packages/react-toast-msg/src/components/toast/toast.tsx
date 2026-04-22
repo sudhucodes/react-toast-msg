@@ -2,6 +2,8 @@ import { ToastProps } from '@/types';
 import { cn } from '@/utilities/cn';
 import { motion } from 'framer-motion';
 import { CloseIcon } from '@/components/icons';
+import { useToastAutoClose } from '@/hooks/use-toast-auto-close';
+import { removeToastById } from '@/utilities/remove-toast';
 
 
 /**
@@ -17,12 +19,18 @@ export function Toast({
     icon,
     setToasts,
     id,
-    closeButton
+    closeButton,
+    autoCloseDuration,
+    pauseOnHover = true
 }: ToastProps) {
-
     const handleClose = () => {
-        setToasts?.(prev => prev.filter(t => t.id !== id));
+        setToasts?.(prev => removeToastById(prev, id));
     };
+
+    const { pause, resume } = useToastAutoClose({
+        autoCloseDuration,
+        onClose: handleClose
+    });
 
     return (
         <motion.div
@@ -39,6 +47,8 @@ export function Toast({
                 'pointer-events-auto relative flex max-w-80 min-w-62 items-center gap-1 rounded-lg border border-gray-200/70 bg-white py-3 text-sm text-zinc-800',
                 type === 'default' ? 'px-4' : 'px-3'
             )}
+            onMouseEnter={pauseOnHover ? pause : undefined}
+            onMouseLeave={pauseOnHover ? resume : undefined}
         >
             {icon}
             {message}

@@ -10,6 +10,7 @@ export default function Page() {
     const [ToastContainerConfig, setToastContainerConfig] = useState({
         autoClose: 5000,
         closeButton: true,
+        pauseOnHover: true,
     });
     const [copy, setCopy] = useState<boolean>(false);
     const messages = {
@@ -78,6 +79,10 @@ export default function Page() {
                     </a>{' '}
                     library, designed to display customizable notification messages.
                 </p>
+                <p className="max-w-xl text-center text-sm text-slate-500">
+                    Auto-closing toasts pause while hovered by default. Toggle it below to compare
+                    the behavior.
+                </p>
 
                 <h3 className="mt-8 text-2xl font-bold">Toast Configuration</h3>
 
@@ -106,6 +111,23 @@ export default function Page() {
                                 setToastContainerConfig({
                                     ...ToastContainerConfig,
                                     closeButton: e.target.value === 'true',
+                                })
+                            }
+                            className='border border-gray-200 rounded-md px-2 py-1'
+                        >
+                            <option value="true">True</option>
+                            <option value="false">False</option>
+                        </select>
+                    </div>
+                    <div className='flex flex-col gap-2'>
+                        <label htmlFor="pauseOnHover">Pause On Hover</label>
+                        <select
+                            id="pauseOnHover"
+                            value={ToastContainerConfig.pauseOnHover ? 'true' : 'false'}
+                            onChange={(e) =>
+                                setToastContainerConfig({
+                                    ...ToastContainerConfig,
+                                    pauseOnHover: e.target.value === 'true',
                                 })
                             }
                             className='border border-gray-200 rounded-md px-2 py-1'
@@ -146,6 +168,12 @@ export default function Page() {
                         className="rounded-md border border-gray-200 bg-gray-50 px-5 py-2 text-sm hover:bg-gray-200/80 active:scale-95 transition-all duration-300 font-medium text-gray-600"
                     >
                         Promise (Loader)
+                    </button>
+                    <button
+                        onClick={() => toast('Hover this toast to pause the timer', { duration: 5000 })}
+                        className="rounded-md border border-gray-200 bg-gray-50 px-5 py-2 text-sm hover:bg-gray-200/80 active:scale-95 transition-all duration-300 font-medium text-gray-600"
+                    >
+                        Hover Pause Demo
                     </button>
                     <button
                         onClick={() => toast.error("Critical server error! Please review.", {

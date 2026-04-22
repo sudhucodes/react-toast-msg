@@ -14,6 +14,7 @@ Fast, flexible, developer-friendly React toast notifications with a clean black 
 - **Tailwind Driven**: Styled with Tailwind CSS for modern aesthetics.
 - **Performance**: Built with tsup for high performance and small bundle size.
 - **Customizable**: Easily customize duration, type, and icons.
+- **Readable by Default**: Auto-closing toasts pause while hovered.
 - **Promise Support**: First-class support for `toast.promise`.
 
 ## Installation
@@ -59,6 +60,9 @@ toast.success('Your changes have been saved.');
 toast.error('An error occurred. Please try again.');
 toast.warning('Check your internet connection.');
 toast.loading('Saving results...');
+
+// Hover pauses auto close by default
+toast('Hover me if you need more time to read', { duration: 5000 });
 
 // Promise toast
 toast.promise(saveData(), {
