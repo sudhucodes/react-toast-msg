@@ -21,6 +21,7 @@ Used when triggering a toast (internally or via future API extensions).
 | duration | number | 3000 | Time in ms before auto-close. |
 | closeButton | boolean | false | Whether to show a close button on all toasts by default. |
 | autoClose | boolean | number | - | Disable auto-closing (false) or specify custom duration. |
+| pauseOnHover | boolean | true | Pause the auto-close timer while the toast is hovered. |
 
 
 ## ToastContainerProps
@@ -31,6 +32,7 @@ Props accepted by the `ToastContainer` component.
 | :--- | :--- | :--- | :--- |
 | autoClose | number | boolean | 3000 | Global default duration for auto-closing toasts. Set to `false` to disable. |
 | closeButton | boolean | false | Whether to show a close button on all toasts by default. |
+| pauseOnHover | boolean | true | Pause the auto-close timer while any hovered toast remains visible. |
 
 
 ## ShowToastFn

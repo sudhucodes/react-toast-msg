@@ -1,4 +1,4 @@
-import { render, screen, act, waitFor } from '@testing-library/react';
+import { render, screen, act, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { ToastContainer, toast } from './toast-container';
 
@@ -74,5 +74,52 @@ describe('ToastContainer & toast()', () => {
         });
 
         expect(screen.getByText('Success!')).toBeInTheDocument();
+    });
+
+    it('pauses auto close while hovered and resumes after mouse leave', () => {
+        render(<ToastContainer autoClose={1000} />);
+
+        act(() => {
+            toast('Hover Pause');
+        });
+
+        const toastElement = screen.getByText('Hover Pause');
+
+        act(() => {
+            vi.advanceTimersByTime(400);
+            fireEvent.mouseEnter(toastElement);
+            vi.advanceTimersByTime(1000);
+        });
+
+        expect(screen.getByText('Hover Pause')).toBeInTheDocument();
+
+        act(() => {
+            fireEvent.mouseLeave(toastElement);
+            vi.advanceTimersByTime(600);
+        });
+
+        waitFor(() => {
+            expect(screen.queryByText('Hover Pause')).not.toBeInTheDocument();
+        });
+    });
+
+    it('allows disabling pause on hover per toast', () => {
+        render(<ToastContainer autoClose={1000} />);
+
+        act(() => {
+            toast('No Pause', { pauseOnHover: false });
+        });
+
+        const toastElement = screen.getByText('No Pause');
+
+        act(() => {
+            vi.advanceTimersByTime(400);
+            fireEvent.mouseEnter(toastElement);
+            vi.advanceTimersByTime(600);
+        });
+
+        waitFor(() => {
+            expect(screen.queryByText('No Pause')).not.toBeInTheDocument();
+        });
     });
 });

@@ -25,6 +25,25 @@ If you have an important message that requires the user's explicit attention, yo
 toast.error('Critical server error!', { autoClose: false });
 ```
 
+## Pause On Hover
+
+Auto-closing toasts pause their timer while hovered by default, which gives users time to read longer messages without changing your API calls.
+
+```tsx copy
+toast.success('Hover this toast to pause the countdown', {
+    duration: 5000
+});
+```
+
+If you want a toast to keep closing on schedule even while hovered, disable it per toast or on the container.
+
+```tsx copy
+toast('This toast will keep counting down', {
+    duration: 5000,
+    pauseOnHover: false
+});
+```
+
 ## Manual Close Button
 
 You can enable or disable the close button globally in `ToastContainer` or per-toast via the `toast` methods.
@@ -41,11 +60,12 @@ toast.error('Critical error!', { duration: 5000, closeButton: true });
 The `ToastContainer` accepts props that apply to all toasts.
 
 ```tsx copy
-<ToastContainer autoClose={5000} closeButton={true} />
+<ToastContainer autoClose={5000} closeButton={true} pauseOnHover={true} />
 ```
 
 - `autoClose`: Default duration for all toasts in milliseconds. Pass `false` to disable auto-closing globally.
 - `closeButton`: Whether to show a close button by default.
+- `pauseOnHover`: Pauses the auto-close timer while a user hovers a toast. Defaults to `true`.
 
 ## Promises
 

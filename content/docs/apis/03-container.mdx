@@ -9,10 +9,11 @@ The `ToastContainer` component is the host for all your toast notifications. It 
 
 The `ToastContainer` component accepts the following props:
 
-| Props       | Type    | Default | Description                                                                 |
-| :---------- | :------ | :------ | :-------------------------------------------------------------------------- |
-| autoClose   | number  | 3000    | Global default duration for auto-closing toasts. Set to `false` to disable. |
-| closeButton | boolean | false   | Whether to show a close button on all toasts by default.                    |
+| Props        | Type             | Default | Description                                                                 |
+| :----------- | :--------------- | :------ | :-------------------------------------------------------------------------- |
+| autoClose    | number \| boolean | 3000    | Global default duration for auto-closing toasts. Set to `false` to disable. |
+| closeButton  | boolean          | false   | Whether to show a close button on all toasts by default.                    |
+| pauseOnHover | boolean          | true    | Pauses the auto-close timer while a user hovers a toast.                    |
 
 ## Usage
 
@@ -23,7 +24,7 @@ function Layout({ children }) {
     return (
         <>
             {children}
-            <ToastContainer autoClose={5000} closeButton />
+            <ToastContainer autoClose={5000} closeButton pauseOnHover />
         </>
     );
 }

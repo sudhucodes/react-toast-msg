@@ -17,6 +17,10 @@ export interface ToastItem {
     type: ToastType;
     /** Whether to show a close button on the toast (optional, defaults to container setting) */
     closeButton?: boolean;
+    /** The resolved auto-close duration for this toast, or false to keep it open */
+    autoCloseDuration?: number | false;
+    /** Whether hovering the toast should pause its auto-close timer */
+    pauseOnHover?: boolean;
 }
 
 /**
@@ -34,6 +38,8 @@ export type ToastOptions = {
     closeButton?: boolean;
     /** Whether the toast should auto-close. Can be a boolean or a duration in milliseconds */
     autoClose?: boolean | number;
+    /** Whether hovering this toast should pause its auto-close timer */
+    pauseOnHover?: boolean;
 };
 
 /**
@@ -53,6 +59,10 @@ export interface ToastProps {
     setToasts?: React.Dispatch<React.SetStateAction<ToastItem[]>>;
     /** Whether to show a close button on this toast */
     closeButton?: boolean;
+    /** The resolved auto-close duration for this toast */
+    autoCloseDuration?: number | false;
+    /** Whether hovering this toast should pause its auto-close timer */
+    pauseOnHover?: boolean;
 }
 
 /**
@@ -64,6 +74,8 @@ export interface ToastContainerProps {
     autoClose?: boolean | number;
     /** Global close button setting. Determines if close buttons are shown by default on all toasts */
     closeButton?: boolean;
+    /** Whether hovering a toast should pause its auto-close timer by default */
+    pauseOnHover?: boolean;
 }
 
 /**
