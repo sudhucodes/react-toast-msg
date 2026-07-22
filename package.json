@@ -1,24 +1,24 @@
 {
-  "name": "rtm",
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types",
-    "cs": "changeset",
-    "cs:version": "changeset version && pnpm install --no-frozen-lockfile",
-    "cs:publish": "turbo run build --filter=./packages/* && changeset publish"
-  },
-  "devDependencies": {
-    "@changesets/cli": "^2.31.0",
-    "prettier": "^3.7.4",
-    "turbo": "^2.9.6",
-    "typescript": "5.9.2"
-  },
-  "packageManager": "pnpm@9.0.0",
-  "engines": {
-    "node": ">=18"
-  }
+    "name": "rtm",
+    "private": true,
+    "scripts": {
+        "build": "turbo run build",
+        "dev": "pnpx turbo-run",
+        "lint": "turbo run lint",
+        "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+        "check-types": "turbo run check-types",
+        "cs": "changeset",
+        "cs:version": "changeset version && pnpm install --no-frozen-lockfile",
+        "cs:publish": "turbo run build --filter=./packages/* && changeset publish"
+    },
+    "devDependencies": {
+        "@changesets/cli": "^2.31.0",
+        "prettier": "^3.7.4",
+        "turbo": "^2.9.6",
+        "typescript": "5.9.2"
+    },
+    "packageManager": "pnpm@9.0.0",
+    "engines": {
+        "node": ">=18"
+    }
 }

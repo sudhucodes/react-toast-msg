@@ -1,10 +1,9 @@
-import { ToastProps } from '@/types';
-import { cn } from '@/utilities/cn';
-import { motion } from 'framer-motion';
-import { CloseIcon } from '@/components/icons';
-import { useToastAutoClose } from '@/hooks/use-toast-auto-close';
-import { removeToastById } from '@/utilities/remove-toast';
-
+import { CloseIcon } from "@/components/icons";
+import { useToastAutoClose } from "@/hooks/use-toast-auto-close";
+import { ToastProps } from "@/types";
+import { cn } from "@/utilities/cn";
+import { removeToastById } from "@/utilities/remove-toast";
+import { motion } from "framer-motion";
 
 /**
  * Individual Toast component that renders a single toast notification.
@@ -15,21 +14,21 @@ import { removeToastById } from '@/utilities/remove-toast';
  */
 export function Toast({
     message,
-    type = 'default',
+    type = "default",
     icon,
     setToasts,
     id,
     closeButton,
     autoCloseDuration,
-    pauseOnHover = true
+    pauseOnHover = true,
 }: ToastProps) {
     const handleClose = () => {
-        setToasts?.(prev => removeToastById(prev, id));
+        setToasts?.((prev) => removeToastById(prev, id));
     };
 
     const { pause, resume } = useToastAutoClose({
         autoCloseDuration,
-        onClose: handleClose
+        onClose: handleClose,
     });
 
     return (
@@ -41,11 +40,11 @@ export function Toast({
             transition={{
                 layout: { duration: 0.25 },
                 opacity: { duration: 0.2 },
-                y: { duration: 0.2 }
+                y: { duration: 0.2 },
             }}
             className={cn(
-                'pointer-events-auto relative flex max-w-80 min-w-62 items-center gap-1 rounded-lg border border-gray-200/70 bg-white py-3 text-sm text-zinc-800',
-                type === 'default' ? 'px-4' : 'px-3'
+                "pointer-events-auto relative flex max-w-80 min-w-62 items-center gap-1 rounded-lg border border-gray-200/70 bg-white py-3 text-sm text-zinc-800",
+                type === "default" ? "px-4" : "px-3",
             )}
             onMouseEnter={pauseOnHover ? pause : undefined}
             onMouseLeave={pauseOnHover ? resume : undefined}
