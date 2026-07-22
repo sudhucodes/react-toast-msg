@@ -1,5 +1,11 @@
 # react-toast-msg
 
+## 2.9.1
+
+### Patch Changes
+
+- fixed config
+
 ## 2.9.0
 
 ### Minor Changes

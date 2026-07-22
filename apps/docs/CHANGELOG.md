@@ -1,5 +1,12 @@
 # docs
 
+## 0.2.1
+
+### Patch Changes
+
+- Updated dependencies
+    - react-toast-msg@2.9.1
+
 ## 0.2.0
 
 ### Minor Changes

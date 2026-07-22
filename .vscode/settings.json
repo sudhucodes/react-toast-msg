@@ -1,8 +1,15 @@
 {
+    "typescript.format.enable": true,
+    "javascript.format.enable": true,
+    "explorer.compactFolders": false,
     "editor.smoothScrolling": true,
     "editor.cursorSmoothCaretAnimation": "on",
     "workbench.list.smoothScrolling": true,
     "terminal.integrated.smoothScrolling": true,
     "editor.cursorBlinking": "smooth",
-    "explorer.compactFolders": false
+    "editor.detectIndentation": false,
+    "css.lint.unknownAtRules": "ignore",
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "always"
+    }
 }
